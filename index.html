@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAV-Hunter Dashboard (Wireframe)</title>
+    <style>
+        /* Strict Wireframe CSS - Default font, grayscale, simple borders/padding */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        header {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #000;
+        }
+        
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+            border-bottom: 2px solid #ccc;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RAV-Hunter Matchande Annonser</h1>
+            <p>Senast uppdaterad: <span id="last-updated"></span></p>
+        </header>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titel</th>
+                        <th>Pris</th>
+                        <th>Miltal</th>
+                        <th>Plats</th>
+                        <th>Dragkrok</th>
+                        <th>Typ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/05d5279c-7088-4068-b035-0229c479d24d" target="_blank">Toyota RAV4 Hybrid AWD-i</a></td>
+            <td>495 300 kr</td>
+            <td>832 mil</td>
+            <td>Hudiksvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/682d3ae9-6fe2-4594-b9dc-49e86fe41c35" target="_blank">Toyota RAV4 Laddhybrid</a></td>
+            <td>329 800 kr</td>
+            <td>13 187 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/74c9e613-deb4-4dca-a931-c66bc2b5b5a5" target="_blank">Toyota RAV4 Hybrid AWD-i</a></td>
+            <td>349 800 kr</td>
+            <td>5 681 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/e45c467d-e5b2-4e65-a7d0-4c50f4655c94" target="_blank">Toyota RAV4 Hybrid</a></td>
+            <td>259 900 kr</td>
+            <td>8 976 mil</td>
+            <td>Uppsala</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/9a5cb189-fdfb-456f-9721-71003fffee25" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
+            <td>409 900 kr</td>
+            <td>8 500 mil</td>
+            <td>Bil</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/4f48a276-3eda-4600-8f44-a7bfb914287a" target="_blank">Toyota RAV4 Hybrid AWD-i</a></td>
+            <td>389 800 kr</td>
+            <td>5 599 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/d47118b8-96e0-4d00-928d-f494addfdd5d" target="_blank">Toyota RAV4 Hybrid AWD-i</a></td>
+            <td>429 900 kr</td>
+            <td>4 527 mil</td>
+            <td>Åkersberga</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/e11f2482-f530-415e-82d9-99791a93fed0" target="_blank">Toyota RAV4 Hybrid</a></td>
+            <td>220 000 kr</td>
+            <td>13 000 mil</td>
+            <td>Falkenberg</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/c9e82d5a-c4d7-4422-8733-6d9b478750f1" target="_blank">Toyota RAV4</a></td>
+            <td>88 900 kr</td>
+            <td>24 610 mil</td>
+            <td>Bilar</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/976bb1dd-b4c7-40c4-a858-bf9760194241" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
+            <td>454 900 kr</td>
+            <td>4 708 mil</td>
+            <td>Toyota</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/5db31057-ad14-4380-8c30-e390b594321c" target="_blank">Toyota RAV4 Hybrid AWD-i</a></td>
+            <td>540 800 kr</td>
+            <td>1 mil</td>
+            <td>Toyota</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/50a7205d-855a-4ee8-821b-fa4dfc9769fc" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
+            <td>399 900 kr</td>
+            <td>7 500 mil</td>
+            <td>Toyota</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/a2c0529e-697f-4d42-9d80-5f9ed79647d5" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
+            <td>439 900 kr</td>
+            <td>6 400 mil</td>
+            <td>Örebro</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/09c049d6-c3cd-414a-b545-7647536aa87d" target="_blank">Toyota RAV4 Hybrid AWD-i</a></td>
+            <td>438 900 kr</td>
+            <td>1 485 mil</td>
+            <td>Bilar</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/ebfb2cfa-32b0-4e7d-a24e-c0ec7b43f3ad" target="_blank">Toyota RAV4</a></td>
+            <td>159 900 kr</td>
+            <td>19 586 mil</td>
+            <td>Bilinorr</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/bf4cedea-b2ff-40ae-85b0-b82ce769a8a2" target="_blank">Toyota RAV4</a></td>
+            <td>189 900 kr</td>
+            <td>12 047 mil</td>
+            <td>Arvika</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/1dd6a656-2182-483a-b108-9850f816bcf7" target="_blank">Toyota RAV4</a></td>
+            <td>149 900 kr</td>
+            <td>18 060 mil</td>
+            <td>Borås</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/cc07b8c7-4d02-4919-8880-0acf50195db0" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
+            <td>439 900 kr</td>
+            <td>5 450 mil</td>
+            <td>Arvika</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/6e926a5d-9d5e-4f1b-8718-aa9a862fad4f" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
+            <td>539 000 kr</td>
+            <td>3 060 mil</td>
+            <td>Trollhättan</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/019f271b-4480-7412-a422-4a256d82cd21" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
+            <td>414 900 kr</td>
+            <td>4 500 mil</td>
+            <td>Sundbyberg</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/0f2ab506-2d8a-4a9a-b126-84ba4ffa9096" target="_blank">Toyota RAV4 Hybrid AWD-i</a></td>
+            <td>459 900 kr</td>
+            <td>1 090 mil</td>
+            <td>Toyota</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/5f500e35-2644-4afc-924f-3b6b31a6615e" target="_blank">Toyota RAV4 Laddhybrid</a></td>
+            <td>389 000 kr</td>
+            <td>7 945 mil</td>
+            <td>AB</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/4797e2b9-3023-4e3e-b542-32515a084944" target="_blank">Toyota RAV4 Hybrid AWD-i</a></td>
+            <td>459 900 kr</td>
+            <td>850 mil</td>
+            <td>Toyota</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.wayke.se/objekt/372f143d-d2ba-4098-b3e4-73f3cba184b8" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
+            <td>499 000 kr</td>
+            <td>2 213 mil</td>
+            <td>Växjö</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24270790" target="_blank">Kia Sorento</a></td>
+            <td>374 800 kr</td>
+            <td>12 096 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23535984" target="_blank">Volvo XC60</a></td>
+            <td>348 800 kr</td>
+            <td>10 488 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24247166" target="_blank">BMW 225e</a></td>
+            <td>314 800 kr</td>
+            <td>7 067 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24138959" target="_blank">Mazda CX-30</a></td>
+            <td>279 900 kr</td>
+            <td>8 183 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/22114984" target="_blank">BMW 530e</a></td>
+            <td>289 800 kr</td>
+            <td>10 113 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24414989" target="_blank">Kia Sportage</a></td>
+            <td>309 800 kr</td>
+            <td>6 232 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/22920322" target="_blank">Volvo V60</a></td>
+            <td>334 800 kr</td>
+            <td>13 658 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/22209258" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
+            <td>449 800 kr</td>
+            <td>8 993 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23411552" target="_blank">BMW 530e</a></td>
+            <td>314 800 kr</td>
+            <td>13 854 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23615808" target="_blank">Volvo XC60</a></td>
+            <td>379 800 kr</td>
+            <td>12 045 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23613483" target="_blank">Mercedes-Benz E300 de</a></td>
+            <td>329 800 kr</td>
+            <td>11 813 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23758950" target="_blank">Mercedes-Benz E300 de</a></td>
+            <td>389 800 kr</td>
+            <td>12 508 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23349287" target="_blank">Volvo XC90</a></td>
+            <td>499 900 kr</td>
+            <td>11 659 mil</td>
+            <td>Umeå</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/22751073" target="_blank">BMW 330e</a></td>
+            <td>319 900 kr</td>
+            <td>13 081 mil</td>
+            <td>Skellefteå</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23374498" target="_blank">Ford Explorer</a></td>
+            <td>404 800 kr</td>
+            <td>11 389 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23541649" target="_blank">Mitsubishi Eclipse Cross</a></td>
+            <td>229 800 kr</td>
+            <td>7 463 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23177173" target="_blank">Volvo XC60</a></td>
+            <td>439 800 kr</td>
+            <td>12 050 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24540160" target="_blank">Mazda CX-60</a></td>
+            <td>309 700 kr</td>
+            <td>12 100 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24539700" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
+            <td>329 800 kr</td>
+            <td>13 187 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24372933" target="_blank">BMW X1</a></td>
+            <td>298 900 kr</td>
+            <td>5 981 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24535791" target="_blank">Toyota RAV4</a></td>
+            <td>349 800 kr</td>
+            <td>5 681 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23264130" target="_blank">Toyota RAV4</a></td>
+            <td>338 900 kr</td>
+            <td>12 143 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24531033" target="_blank">Honda CR-V</a></td>
+            <td>289 900 kr</td>
+            <td>6 000 mil</td>
+            <td>Skellefteå</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23600516" target="_blank">Toyota RAV4</a></td>
+            <td>474 800 kr</td>
+            <td>544 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23592895" target="_blank">Volvo XC60</a></td>
+            <td>414 800 kr</td>
+            <td>7 821 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/20638240" target="_blank">BMW 330e</a></td>
+            <td>284 800 kr</td>
+            <td>10 950 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23463244" target="_blank">BMW X3</a></td>
+            <td>279 800 kr</td>
+            <td>13 531 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24150282" target="_blank">Audi A6</a></td>
+            <td>289 800 kr</td>
+            <td>18 304 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24524903" target="_blank">Volvo XC60</a></td>
+            <td>428 900 kr</td>
+            <td>8 242 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24524278" target="_blank">Hyundai Tucson</a></td>
+            <td>289 800 kr</td>
+            <td>6 765 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23348504" target="_blank">Kia Sportage</a></td>
+            <td>319 900 kr</td>
+            <td>9 015 mil</td>
+            <td>Skellefteå</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24523808" target="_blank">Toyota RAV4</a></td>
+            <td>389 800 kr</td>
+            <td>5 599 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23535644" target="_blank">Mercedes-Benz GLE53</a></td>
+            <td>1 195 000 kr</td>
+            <td>2 900 mil</td>
+            <td>Umeå</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/19409462" target="_blank">BMW X1</a></td>
+            <td>469 000 kr</td>
+            <td>3 550 mil</td>
+            <td>Skellefteå</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23569895" target="_blank">BMW 530e</a></td>
+            <td>304 800 kr</td>
+            <td>13 368 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23599295" target="_blank">Mitsubishi Outlander</a></td>
+            <td>169 900 kr</td>
+            <td>14 800 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/22772755" target="_blank">Kia Sorento</a></td>
+            <td>389 900 kr</td>
+            <td>10 000 mil</td>
+            <td>Timrå</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24516294" target="_blank">Mazda CX-60</a></td>
+            <td>607 500 kr</td>
+            <td>0 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/22644095" target="_blank">Ford Explorer</a></td>
+            <td>399 800 kr</td>
+            <td>11 344 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/13364953" target="_blank">Mitsubishi Eclipse Cross</a></td>
+            <td>429 900 kr</td>
+            <td>1 mil</td>
+            <td>Örnsköldsvik</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24141301" target="_blank">Audi Q5</a></td>
+            <td>434 900 kr</td>
+            <td>7 550 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24243563" target="_blank">Volkswagen Touareg</a></td>
+            <td>459 000 kr</td>
+            <td>14 000 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24123299" target="_blank">Mitsubishi Eclipse Cross</a></td>
+            <td>219 800 kr</td>
+            <td>8 088 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23462389" target="_blank">Volvo XC60</a></td>
+            <td>549 700 kr</td>
+            <td>3 217 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24360299" target="_blank">Kia Sportage</a></td>
+            <td>359 800 kr</td>
+            <td>6 169 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23138431" target="_blank">Volvo V60</a></td>
+            <td>299 800 kr</td>
+            <td>13 084 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/24508924" target="_blank">Mazda CX-60</a></td>
+            <td>598 700 kr</td>
+            <td>0 mil</td>
+            <td>Östersund</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/21089269" target="_blank">Volvo V60</a></td>
+            <td>369 500 kr</td>
+            <td>11 286 mil</td>
+            <td>Timrå</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/20742122" target="_blank">Ford Kuga</a></td>
+            <td>389 900 kr</td>
+            <td>1 640 mil</td>
+            <td>Örnsköldsvik</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="https://www.blocket.se/mobility/item/23592940" target="_blank">Volvo XC60</a></td>
+            <td>404 800 kr</td>
+            <td>5 962 mil</td>
+            <td>Sundsvall</td>
+            <td>Nej</td>
+            <td>🏡 Local</td>
+        </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        document.getElementById('last-updated').textContent = new Date().toLocaleString('sv-SE');
+    </script>
+</body>
+</html>
