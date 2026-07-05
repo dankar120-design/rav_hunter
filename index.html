@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAV-Hunter Dashboard (Wireframe)</title>
+    <title>Bargain Hunter Dashboard (Wireframe)</title>
     <style>
         /* Strict Wireframe CSS - Default font, grayscale, simple borders/padding */
         body {
@@ -54,6 +54,7 @@
         th, td {
             padding: 12px 15px;
             border-bottom: 1px solid #eee;
+            vertical-align: middle;
         }
         
         th {
@@ -82,237 +83,128 @@
             padding: 4px 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            font-size: 14px;
+            font-size: 12px;
             background-color: #fafafa;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+        
+        .badge-positive {
+            font-weight: bold;
+            border-color: #333;
+            background-color: #eaeaea;
+        }
+        
+        .badge-warning {
+            border-color: #999;
+            background-color: #f0f0f0;
+            font-style: italic;
+        }
+        
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 350px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>RAV-Hunter Matchande Annonser</h1>
+            <h1>Bargain Hunter Dashboard</h1>
             <p>Senast uppdaterad: <span id="last-updated"></span></p>
         </header>
         <div class="table-container">
             <table>
                 <thead>
                     <tr>
+                        <th>Value Index</th>
                         <th>Titel</th>
+                        <th>Modell</th>
                         <th>Pris</th>
                         <th>Miltal</th>
                         <th>Årsmodell</th>
                         <th>Plats</th>
-                        <th>Dragkrok</th>
+                        <th>Utrustning & Analys</th>
                         <th>Typ</th>
                     </tr>
                 </thead>
                 <tbody>
                     
         <tr>
-            <td><a href="https://www.wayke.se/objekt/682d3ae9-6fe2-4594-b9dc-49e86fe41c35" target="_blank">Toyota RAV4 Laddhybrid</a></td>
-            <td>329 800 kr</td>
-            <td>13 187 mil</td>
-            <td>2021</td>
-            <td>Sundsvall</td>
-            <td>Ja</td>
-            <td>🗺️ Other</td>
-        </tr>
-        
-
-        <tr>
-            <td><a href="https://www.wayke.se/objekt/74c9e613-deb4-4dca-a931-c66bc2b5b5a5" target="_blank">Toyota RAV4 Hybrid AWD-i</a></td>
-            <td>349 800 kr</td>
-            <td>5 681 mil</td>
-            <td>2020</td>
-            <td>Sundsvall</td>
-            <td>Ja</td>
-            <td>🗺️ Other</td>
-        </tr>
-        
-
-        <tr>
-            <td><a href="https://www.wayke.se/objekt/e45c467d-e5b2-4e65-a7d0-4c50f4655c94" target="_blank">Toyota RAV4 Hybrid</a></td>
-            <td>259 900 kr</td>
-            <td>8 976 mil</td>
-            <td>2017</td>
-            <td>Uppsala</td>
-            <td>Ja</td>
-            <td>🚚 Travel Delivery</td>
-        </tr>
-        
-
-        <tr>
-            <td><a href="https://www.wayke.se/objekt/9a5cb189-fdfb-456f-9721-71003fffee25" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
-            <td>409 900 kr</td>
-            <td>8 500 mil</td>
-            <td>2022</td>
-            <td>Bil</td>
-            <td>Nej</td>
-            <td>🗺️ Other</td>
-        </tr>
-        
-
-        <tr>
-            <td><a href="https://www.wayke.se/objekt/4f48a276-3eda-4600-8f44-a7bfb914287a" target="_blank">Toyota RAV4 Hybrid AWD-i</a></td>
-            <td>389 800 kr</td>
-            <td>5 599 mil</td>
-            <td>2022</td>
-            <td>Sundsvall</td>
-            <td>Ja</td>
-            <td>🗺️ Other</td>
-        </tr>
-        
-
-        <tr>
-            <td><a href="https://www.wayke.se/objekt/d47118b8-96e0-4d00-928d-f494addfdd5d" target="_blank">Toyota RAV4 Hybrid AWD-i</a></td>
-            <td>429 900 kr</td>
-            <td>4 527 mil</td>
-            <td>2023</td>
-            <td>Åkersberga</td>
-            <td>Nej</td>
-            <td>🗺️ Other</td>
-        </tr>
-        
-
-        <tr>
-            <td><a href="https://www.wayke.se/objekt/e11f2482-f530-415e-82d9-99791a93fed0" target="_blank">Toyota RAV4 Hybrid</a></td>
-            <td>220 000 kr</td>
-            <td>13 000 mil</td>
-            <td>2016</td>
-            <td>Falkenberg</td>
-            <td>Nej</td>
-            <td>🗺️ Other</td>
-        </tr>
-        
-
-        <tr>
-            <td><a href="https://www.wayke.se/objekt/50a7205d-855a-4ee8-821b-fa4dfc9769fc" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
-            <td>399 900 kr</td>
-            <td>7 500 mil</td>
-            <td>2023</td>
-            <td>Toyota</td>
-            <td>Nej</td>
-            <td>🗺️ Other</td>
-        </tr>
-        
-
-        <tr>
-            <td><a href="https://www.wayke.se/objekt/a2c0529e-697f-4d42-9d80-5f9ed79647d5" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
-            <td>439 900 kr</td>
-            <td>6 400 mil</td>
-            <td>2023</td>
-            <td>Örebro</td>
-            <td>Ja</td>
-            <td>🗺️ Other</td>
-        </tr>
-        
-
-        <tr>
-            <td><a href="https://www.wayke.se/objekt/09c049d6-c3cd-414a-b545-7647536aa87d" target="_blank">Toyota RAV4 Hybrid AWD-i</a></td>
-            <td>438 900 kr</td>
-            <td>1 485 mil</td>
-            <td>2024</td>
+            <td><span class='badge'>-26.6%</span></td>
+            <td><a href="https://www.wayke.se/objekt/c9e82d5a-c4d7-4422-8733-6d9b478750f1" target="_blank">Toyota RAV4</a></td>
+            <td>Toyota RAV4</td>
+            <td>88 900 kr</td>
+            <td>24 610 mil</td>
+            <td>2010</td>
             <td>Bilar</td>
-            <td>Nej</td>
+            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
             <td>🗺️ Other</td>
         </tr>
         
 
         <tr>
-            <td><a href="https://www.wayke.se/objekt/bf4cedea-b2ff-40ae-85b0-b82ce769a8a2" target="_blank">Toyota RAV4</a></td>
-            <td>189 900 kr</td>
-            <td>12 047 mil</td>
-            <td>2017</td>
-            <td>Arvika</td>
-            <td>Ja</td>
+            <td><span class='badge'>-</span></td>
+            <td><a href="https://www.wayke.se/objekt/0215978a-6ac2-4133-b87a-a07289eb4106" target="_blank">Honda CR-V</a></td>
+            <td>Honda CR-V</td>
+            <td>129 500 kr</td>
+            <td>16 500 mil</td>
+            <td>2013</td>
+            <td>Kalmar</td>
+            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
             <td>🗺️ Other</td>
         </tr>
         
 
         <tr>
-            <td><a href="https://www.wayke.se/objekt/cc07b8c7-4d02-4919-8880-0acf50195db0" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
-            <td>439 900 kr</td>
-            <td>5 450 mil</td>
-            <td>2023</td>
-            <td>Arvika</td>
-            <td>Nej</td>
+            <td><span class='badge'>-</span></td>
+            <td><a href="https://www.wayke.se/objekt/601ddd15-56f2-4d70-a3e7-437457e2f494" target="_blank">Honda CR-V</a></td>
+            <td>Honda CR-V</td>
+            <td>116 900 kr</td>
+            <td>27 457 mil</td>
+            <td>2016</td>
+            <td>Täby</td>
+            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
             <td>🗺️ Other</td>
         </tr>
         
 
         <tr>
-            <td><a href="https://www.wayke.se/objekt/019f271b-4480-7412-a422-4a256d82cd21" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
-            <td>414 900 kr</td>
-            <td>4 500 mil</td>
-            <td>2022</td>
-            <td>Sundbyberg</td>
-            <td>Nej</td>
+            <td><span class='badge'>-</span></td>
+            <td><a href="https://www.wayke.se/objekt/c80e3f2f-de51-463e-bb15-fad8bc1371c4" target="_blank">Honda CR-V</a></td>
+            <td>Honda CR-V</td>
+            <td>129 800 kr</td>
+            <td>13 843 mil</td>
+            <td>2013</td>
+            <td>Växjö</td>
+            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
             <td>🗺️ Other</td>
         </tr>
         
 
         <tr>
-            <td><a href="https://www.wayke.se/objekt/5f500e35-2644-4afc-924f-3b6b31a6615e" target="_blank">Toyota RAV4 Laddhybrid</a></td>
-            <td>389 000 kr</td>
-            <td>7 945 mil</td>
-            <td>2021</td>
-            <td>AB</td>
-            <td>Nej</td>
-            <td>🗺️ Other</td>
+            <td><span class='badge'>-</span></td>
+            <td><a href="https://www.wayke.se/objekt/e90a0137-2b0a-4656-882b-b6067b5fff0e" target="_blank">Honda CR-V</a></td>
+            <td>Honda CR-V</td>
+            <td>129 800 kr</td>
+            <td>18 138 mil</td>
+            <td>2016</td>
+            <td>Stockholm</td>
+            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            <td>✈️ Travel Direct</td>
         </tr>
         
 
         <tr>
-            <td><a href="https://www.blocket.se/mobility/item/22209258" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
-            <td>449 800 kr</td>
-            <td>8 993 mil</td>
-            <td>2023</td>
-            <td>Sundsvall</td>
-            <td>Ja</td>
-            <td>🗺️ Other</td>
-        </tr>
-        
-
-        <tr>
-            <td><a href="https://www.blocket.se/mobility/item/24539700" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
-            <td>329 800 kr</td>
-            <td>13 187 mil</td>
-            <td>2021</td>
-            <td>Sundsvall</td>
-            <td>Ja</td>
-            <td>🗺️ Other</td>
-        </tr>
-        
-
-        <tr>
-            <td><a href="https://www.blocket.se/mobility/item/24535791" target="_blank">Toyota RAV4</a></td>
-            <td>349 800 kr</td>
-            <td>5 681 mil</td>
-            <td>2020</td>
-            <td>Sundsvall</td>
-            <td>Ja</td>
-            <td>🗺️ Other</td>
-        </tr>
-        
-
-        <tr>
-            <td><a href="https://www.blocket.se/mobility/item/23264130" target="_blank">Toyota RAV4</a></td>
-            <td>338 900 kr</td>
-            <td>12 143 mil</td>
-            <td>2023</td>
-            <td>Östersund</td>
-            <td>Nej</td>
-            <td>🗺️ Other</td>
-        </tr>
-        
-
-        <tr>
-            <td><a href="https://www.blocket.se/mobility/item/24523808" target="_blank">Toyota RAV4</a></td>
-            <td>389 800 kr</td>
-            <td>5 599 mil</td>
-            <td>2022</td>
-            <td>Sundsvall</td>
-            <td>Ja</td>
+            <td><span class='badge'>-</span></td>
+            <td><a href="https://www.wayke.se/objekt/59f38260-9f97-49d9-b56d-875d41c8f55a" target="_blank">Honda CR-V</a></td>
+            <td>Honda CR-V</td>
+            <td>129 900 kr</td>
+            <td>14 045 mil</td>
+            <td>2014</td>
+            <td>Laholm</td>
+            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
             <td>🗺️ Other</td>
         </tr>
         
