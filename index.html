@@ -251,22 +251,23 @@
     <div class="container">
         <header>
             <h1>Bargain Hunter Dashboard</h1>
-            <p style="margin: 5px 0 0 0; font-size: 13px; color: #666;">Senast uppdaterad: 2026-07-06 09:58:49</p>
+            <p style="margin: 5px 0 0 0; font-size: 13px; color: #666;">Sidan genererades (GitHub Pages): 2026-07-06 12:15:56</p>
+            <p style="margin: 2px 0 0 0; font-size: 13px; color: #666;">Senaste skrapning (Lokalt): 2026-07-06 12:15:56</p>
         </header>
 
         <!-- Database Stats -->
         <div class="stats-grid">
             <div class="stat-card">
                 <span class="stat-label">Aktiva fynd i Norrland</span>
-                <span class="stat-value">1 st</span>
+                <span class="stat-value">2 st</span>
             </div>
             <div class="stat-card">
                 <span class="stat-label">Godkända bilar i databasen</span>
-                <span class="stat-value">51 st</span>
+                <span class="stat-value">69 st</span>
             </div>
             <div class="stat-card">
                 <span class="stat-label">Totalt indexerade bilar (Sverige)</span>
-                <span class="stat-value">382 st</span>
+                <span class="stat-value">783 st</span>
             </div>
         </div>
 
@@ -288,6 +289,20 @@
                 </thead>
                 <tbody>
                     
+        <tr>
+            <td><span class='badge'>-</span></td>
+            <td><span class='badge'>-</span></td>
+            <td><a href="https://www.blocket.se/mobility/item/24593375" target="_blank">Kia Venga</a></td>
+            <td>Kia Venga</td>
+            <td>97 900 kr</td>
+            <td>3 319 mil</td>
+            <td>2014</td>
+            <td>Luleå</td>
+            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
         <tr>
             <td><span class='badge'>-</span></td>
             <td><span class='badge'>-</span></td>
@@ -341,7 +356,7 @@
 
     <script>
         // Data injected from Python
-        const listingsData = {"24570938": {"title": "Volvo V70", "price": "43 900", "mileage": "29 560 mil", "year": 2008, "location": "Luleå", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24570938", "predicted_price": "0"}};
+        const listingsData = {"24593375": {"title": "Kia Venga", "price": "97 900", "mileage": "3 319 mil", "year": 2014, "location": "Luleå", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24593375", "predicted_price": "0"}, "24570938": {"title": "Volvo V70", "price": "43 900", "mileage": "29 560 mil", "year": 2008, "location": "Luleå", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24570938", "predicted_price": "0"}};
 
         function openModal(id) {
             const data = listingsData[id];
