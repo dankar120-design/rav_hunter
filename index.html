@@ -28,12 +28,44 @@
         header {
             border-bottom: 2px solid #ccc;
             padding-bottom: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
         
         h1 {
             margin: 0;
             font-size: 24px;
+            color: #000;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .stat-card {
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-value {
+            font-size: 22px;
+            font-weight: bold;
             color: #000;
         }
         
@@ -106,19 +138,144 @@
             flex-wrap: wrap;
             max-width: 350px;
         }
+
+        /* Tooltip Styles */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 240px;
+            background-color: #333;
+            color: #fff;
+            text-align: left;
+            border-radius: 4px;
+            padding: 8px 12px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.2s;
+            font-size: 11px;
+            line-height: 1.4;
+            white-space: pre-line;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .clickable-cell {
+            cursor: pointer;
+            text-decoration: underline dotted #666;
+        }
+        
+        .clickable-cell:hover {
+            color: #000;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 8% auto;
+            padding: 25px;
+            border: 1px solid #999;
+            width: 90%;
+            max-width: 700px;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            align-self: flex-end;
+            line-height: 1;
+            margin-top: -10px;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        .modal-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .modal-desc-box {
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            max-height: 200px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Bargain Hunter Dashboard</h1>
-            <p>Senast uppdaterad: <span id="last-updated"></span></p>
+            <p style="margin: 5px 0 0 0; font-size: 13px; color: #666;">Senast uppdaterad: 2026-07-06 09:58:49</p>
         </header>
+
+        <!-- Database Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-label">Aktiva fynd i Norrland</span>
+                <span class="stat-value">1 st</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Godkända bilar i databasen</span>
+                <span class="stat-value">51 st</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Totalt indexerade bilar (Sverige)</span>
+                <span class="stat-value">382 st</span>
+            </div>
+        </div>
+
         <div class="table-container">
             <table>
                 <thead>
                     <tr>
                         <th>Value Index</th>
+                        <th>AI-Betyg</th>
                         <th>Titel</th>
                         <th>Modell</th>
                         <th>Pris</th>
@@ -132,6 +289,7 @@
                 <tbody>
                     
         <tr>
+            <td><span class='badge'>-</span></td>
             <td><span class='badge'>-</span></td>
             <td><a href="https://www.blocket.se/mobility/item/24570938" target="_blank">Volvo V70</a></td>
             <td>Volvo V70</td>
@@ -147,9 +305,86 @@
             </table>
         </div>
     </div>
+
+    <!-- Details Modal -->
+    <div id="details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title" style="margin-top: 0; margin-bottom: 5px;">Bilinformation</h2>
+            
+            <div class="modal-details-grid">
+                <div>
+                    <strong>Pris:</strong> <span id="modal-price"></span> (Snittmarknadsvärde: <span id="modal-predicted-price"></span>)<br>
+                    <strong>Miltal:</strong> <span id="modal-mileage"></span><br>
+                    <strong>Årsmodell:</strong> <span id="modal-year"></span><br>
+                    <strong>Plats:</strong> <span id="modal-location"></span>
+                </div>
+                <div>
+                    <strong>Matematiskt fyndindex:</strong> <span id="modal-math-score"></span><br>
+                    <strong>Kvalitativt AI-betyg:</strong> <span id="modal-ai-grade" style="font-weight: bold; background-color: #eaeaea; padding: 2px 6px; border-radius: 4px; border: 1px solid #ccc;"></span><br>
+                    <strong>AI-Motivering:</strong> <span id="modal-ai-reason" style="font-style: italic;"></span><br>
+                    <strong>Defekter/Kända fel:</strong> <span id="modal-defects" style="color: #b30000; font-weight: 500;"></span>
+                </div>
+            </div>
+            
+            <div>
+                <strong style="display: block; margin-bottom: 8px; font-size: 14px;">Fullständig beskrivning:</strong>
+                <div id="modal-description" class="modal-desc-box"></div>
+            </div>
+            
+            <div style="margin-top: 10px; display: flex; gap: 15px; align-items: center; justify-content: space-between;">
+                <a id="modal-url" href="#" target="_blank" style="display: inline-block; background-color: #333; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 14px; border: 1px solid #000;">Öppna annons på Blocket ➔</a>
+                <button onclick="closeModal()" style="background-color: #fff; border: 1px solid #ccc; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 14px;">Stäng</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        document.getElementById('last-updated').textContent = new Date().toLocaleString('sv-SE');
+        // Data injected from Python
+        const listingsData = {"24570938": {"title": "Volvo V70", "price": "43 900", "mileage": "29 560 mil", "year": 2008, "location": "Luleå", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24570938", "predicted_price": "0"}};
+
+        function openModal(id) {
+            const data = listingsData[id];
+            if (!data) return;
+            
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-price').textContent = data.price + ' kr';
+            document.getElementById('modal-predicted-price').textContent = data.predicted_price + ' kr';
+            document.getElementById('modal-mileage').textContent = data.mileage;
+            document.getElementById('modal-year').textContent = data.year;
+            document.getElementById('modal-location').textContent = data.location;
+            
+            // Format Math Score Badge
+            const mathEl = document.getElementById('modal-math-score');
+            mathEl.textContent = data.math_score;
+            if (parseFloat(data.math_score) > 0) {
+                mathEl.style.color = '#006600';
+                mathEl.style.fontWeight = 'bold';
+            } else {
+                mathEl.style.color = '#333';
+                mathEl.style.fontWeight = 'normal';
+            }
+
+            document.getElementById('modal-ai-grade').textContent = data.ai_grade;
+            document.getElementById('modal-ai-reason').textContent = data.ai_reason;
+            document.getElementById('modal-defects').textContent = data.defects || 'Inga kända fel';
+            document.getElementById('modal-description').textContent = data.description;
+            document.getElementById('modal-url').href = data.url;
+            
+            document.getElementById('details-modal').style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('details-modal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside the modal box
+        window.onclick = function(event) {
+            const modal = document.getElementById('details-modal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
     </script>
 </body>
-<!-- deploy trigger -->
 </html>
