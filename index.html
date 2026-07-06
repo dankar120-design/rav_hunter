@@ -256,8 +256,8 @@
     <div class="container">
         <header>
             <h1>Bargain Hunter Dashboard</h1>
-            <p style="margin: 5px 0 0 0; font-size: 13px; color: #666;">Sidan genererades (GitHub Pages): 2026-07-06 13:27:15</p>
-            <p style="margin: 2px 0 0 0; font-size: 13px; color: #666;">Senaste skrapning (Lokalt): 2026-07-06 13:27:15</p>
+            <p style="margin: 5px 0 0 0; font-size: 13px; color: #666;">Sidan genererades (GitHub Pages): 2026-07-06 13:39:09</p>
+            <p style="margin: 2px 0 0 0; font-size: 13px; color: #666;">Senaste skrapning (Lokalt): 2026-07-06 13:39:09</p>
         </header>
 
         <!-- Database Stats -->
@@ -272,7 +272,7 @@
             </div>
             <div class="stat-card">
                 <span class="stat-label">Totalt indexerade bilar (Sverige)</span>
-                <span class="stat-value">1011 st</span>
+                <span class="stat-value">1029 st</span>
             </div>
         </div>
 
@@ -280,20 +280,34 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Value Index</th>
-                        <th>AI-Betyg</th>
-                        <th>Titel</th>
-                        <th>Modell</th>
-                        <th>Pris</th>
-                        <th>Miltal</th>
-                        <th>Årsmodell</th>
-                        <th>Plats</th>
-                        <th>Utrustning & Analys</th>
-                        <th>Typ</th>
+                        <th onclick="sortTable(0, true)" style="cursor: pointer;">Value Index</th>
+                        <th onclick="sortTable(1, false)" style="cursor: pointer;">AI-Betyg</th>
+                        <th onclick="sortTable(2, false)" style="cursor: pointer;">Titel</th>
+                        <th onclick="sortTable(3, false)" style="cursor: pointer;">Modell</th>
+                        <th onclick="sortTable(4, true)" style="cursor: pointer;">Pris</th>
+                        <th onclick="sortTable(5, true)" style="cursor: pointer;">Miltal</th>
+                        <th onclick="sortTable(6, true)" style="cursor: pointer;">Årsmodell</th>
+                        <th onclick="sortTable(7, false)" style="cursor: pointer;">Plats</th>
+                        <th onclick="sortTable(8, false)" style="cursor: pointer;">Utrustning & Analys</th>
+                        <th onclick="sortTable(9, false)" style="cursor: pointer;">Typ</th>
                     </tr>
                 </thead>
                 <tbody>
                     
+        <tr>
+            <td><span class='badge'>-</span></td>
+            <td><span class='badge'>-</span></td>
+            <td><a href="https://www.blocket.se/mobility/item/24593375" target="_blank">Kia Venga</a></td>
+            <td>Kia Venga</td>
+            <td>97 900 kr</td>
+            <td>3 319 mil</td>
+            <td>2014</td>
+            <td>Luleå</td>
+            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            <td>🏡 Local</td>
+        </tr>
+        
+
         <tr>
             <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24570938")'><span class='badge badge-positive'>+19.7%</span><span class='tooltiptext'>Marknadsvärde: 54 681 kr
 Faktiskt pris: 43 900 kr
@@ -306,20 +320,6 @@ Differens: 10 781 kr</span></div></td>
             <td>2008</td>
             <td>Luleå</td>
             <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge badge-warning'>❌ Ej drag</span><span class='badge'>✅ Motorvärmare</span><span class='badge'>✅ Kupévärmare</span><span class='badge badge-warning' title='Fix vänster bakskärm, endast sommardäck'>🔧 Fel: Fix vänster bakskärm, endast sommardäck</span></div></td>
-            <td>🏡 Local</td>
-        </tr>
-        
-
-        <tr>
-            <td><span class='badge'>-</span></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/24593375" target="_blank">Kia Venga</a></td>
-            <td>Kia Venga</td>
-            <td>97 900 kr</td>
-            <td>3 319 mil</td>
-            <td>2014</td>
-            <td>Luleå</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
             <td>🏡 Local</td>
         </tr>
         
@@ -355,7 +355,10 @@ Differens: 10 781 kr</span></div></td>
             </div>
             
             <div style="margin-top: 10px; display: flex; gap: 15px; align-items: center; justify-content: space-between;">
-                <a id="modal-url" href="#" target="_blank" style="display: inline-block; background-color: #333; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 14px; border: 1px solid #000;">Öppna annons på Blocket ➔</a>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <a id="modal-url" href="#" target="_blank" style="display: inline-block; background-color: #333; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 14px; border: 1px solid #000;">Öppna annons på Blocket ➔</a>
+                    <a id="modal-google-ai" href="#" target="_blank" style="display: inline-block; background-color: #fff; border: 1px solid #ccc; color: #333; padding: 10px 20px; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 14px;">🔍 Google AI-sökning</a>
+                </div>
                 <button onclick="closeModal()" style="background-color: #fff; border: 1px solid #ccc; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 14px;">Stäng</button>
             </div>
         </div>
@@ -363,7 +366,7 @@ Differens: 10 781 kr</span></div></td>
 
     <script>
         // Data injected from Python
-        const listingsData = {"24570938": {"title": "Volvo V70", "price": "43 900", "mileage": "29 560 mil", "year": 2008, "location": "Luleå", "math_score": "+19.7%", "ai_grade": "A", "ai_reason": "Mycket prisvärd och välfungerande, utrustad, kräver mindre bakskärmsfix.", "defects": "Fix vänster bakskärm, endast sommardäck", "description": "Nu säljer jag min Volvo V70 som är i fint skick och fungerar precis som den ska. Det här är en bil som är känd för sin höga komfort, säkerhet och tillförlitlighet. Den passar lika bra för familjen som för dig som pendlar eller behöver en rymlig bil med stort bagageutrymme.\nBilen är regelbundet servad och väl omhändertagen. Motor, växellåda och övriga funktioner fungerar utan anmärkning. Den är bekväm att köra, ligger stadigt på vägen och erbjuder en tyst och behaglig körupplevelse. Invändigt är bilen ren och fräsch, och utvändigt är den i gott skick med normalt slitage sett till ålder och miltal, 29900\nMotor och kupévärmare\nEndast sommardäck,\nBehöver ￼ bara fixa vänster bak. Skärmen ￼\nFör information ringa\n0738962809\nSäljas av Prime Cars Luleå ￼", "url": "https://www.blocket.se/mobility/item/24570938", "predicted_price": "54 681"}, "24593375": {"title": "Kia Venga", "price": "97 900", "mileage": "3 319 mil", "year": 2014, "location": "Luleå", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24593375", "predicted_price": "0"}};
+        const listingsData = {"24593375": {"title": "Kia Venga", "price": "97 900", "mileage": "3 319 mil", "year": 2014, "location": "Luleå", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24593375", "predicted_price": "0"}, "24570938": {"title": "Volvo V70", "price": "43 900", "mileage": "29 560 mil", "year": 2008, "location": "Luleå", "math_score": "+19.7%", "ai_grade": "A", "ai_reason": "Mycket prisvärd och välfungerande, utrustad, kräver mindre bakskärmsfix.", "defects": "Fix vänster bakskärm, endast sommardäck", "description": "Nu säljer jag min Volvo V70 som är i fint skick och fungerar precis som den ska. Det här är en bil som är känd för sin höga komfort, säkerhet och tillförlitlighet. Den passar lika bra för familjen som för dig som pendlar eller behöver en rymlig bil med stort bagageutrymme.\nBilen är regelbundet servad och väl omhändertagen. Motor, växellåda och övriga funktioner fungerar utan anmärkning. Den är bekväm att köra, ligger stadigt på vägen och erbjuder en tyst och behaglig körupplevelse. Invändigt är bilen ren och fräsch, och utvändigt är den i gott skick med normalt slitage sett till ålder och miltal, 29900\nMotor och kupévärmare\nEndast sommardäck,\nBehöver ￼ bara fixa vänster bak. Skärmen ￼\nFör information ringa\n0738962809\nSäljas av Prime Cars Luleå ￼", "url": "https://www.blocket.se/mobility/item/24570938", "predicted_price": "54 681"}};
 
         function openModal(id) {
             const data = listingsData[id];
@@ -393,6 +396,11 @@ Differens: 10 781 kr</span></div></td>
             document.getElementById('modal-description').textContent = data.description;
             document.getElementById('modal-url').href = data.url;
             
+            // Set up Google AI Search Link
+            const cleanTitle = data.title.replace('🏡 Local', '').replace('✈️ Travel Direct', '').replace('🚚 Travel Delivery', '').replace('🗺️ Other', '').trim();
+            const query = encodeURIComponent(`köpråd begagnad bil: vanliga fel och problem för ${cleanTitle} ${data.year} ${data.mileage}`);
+            document.getElementById('modal-google-ai').href = `https://www.google.com/search?q=${query}`;
+            
             document.getElementById('details-modal').style.display = 'block';
         }
         
@@ -406,6 +414,54 @@ Differens: 10 781 kr</span></div></td>
             if (event.target == modal) {
                 modal.style.display = 'none';
             }
+        }
+
+        // Table Sorting Logic
+        let sortDirections = {};
+        function sortTable(colIndex, isNumeric = false) {
+            const table = document.querySelector("table");
+            const tbody = table.querySelector("tbody");
+            const rows = Array.from(tbody.querySelectorAll("tr"));
+            
+            // Toggle direction
+            const currentDir = sortDirections[colIndex] || 'desc';
+            const nextDir = currentDir === 'asc' ? 'desc' : 'asc';
+            sortDirections[colIndex] = nextDir;
+            
+            rows.sort((a, b) => {
+                let cellA = a.cells[colIndex].textContent.trim();
+                let cellB = b.cells[colIndex].textContent.trim();
+                
+                if (isNumeric) {
+                    let numA = parseFloat(cellA.replace(/[^\d.-]/g, '')) || 0;
+                    let numB = parseFloat(cellB.replace(/[^\d.-]/g, '')) || 0;
+                    if (cellA === '-') numA = nextDir === 'asc' ? 99999999 : -99999999;
+                    if (cellB === '-') numB = nextDir === 'asc' ? 99999999 : -99999999;
+                    return nextDir === 'asc' ? numA - numB : numB - numA;
+                } else {
+                    // Custom grade sorting for AI-Betyg (col 1)
+                    if (colIndex === 1) {
+                        const gradeOrder = {'A+': 6, 'A': 5, 'B': 4, 'C': 3, 'D': 2, 'F': 1, '-': 0};
+                        let valA = gradeOrder[cellA] || 0;
+                        let valB = gradeOrder[cellB] || 0;
+                        return nextDir === 'asc' ? valA - valB : valB - valA;
+                    }
+                    if (cellA === '-') cellA = nextDir === 'asc' ? 'zzz' : '';
+                    if (cellB === '-') cellB = nextDir === 'asc' ? 'zzz' : '';
+                    return nextDir === 'asc' ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+                }
+            });
+            
+            tbody.append(...rows);
+            
+            // Update UI indicators
+            const headers = table.querySelectorAll("th");
+            headers.forEach((th, idx) => {
+                th.textContent = th.textContent.replace(/ [▲▼]/g, '');
+                if (idx === colIndex) {
+                    th.textContent += nextDir === 'asc' ? ' ▲' : ' ▼';
+                }
+            });
         }
     </script>
 </body>
