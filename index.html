@@ -296,377 +296,1169 @@
             color: #e0e0e8;
         }
 
+        /* Campaign Tabs */
+        .campaign-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .tab-button {
+            background-color: #121217;
+            border: 1px solid #22222d;
+            color: #b8b8c7;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+        .tab-button:hover {
+            background-color: #1a1a24;
+            border-color: #333348;
+        }
+        .tab-button.active {
+            border-color: #00f0ff;
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.15);
+        }
+        .campaign-section {
+            display: none;
+        }
+        .campaign-section.active {
+            display: block;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Bargain Hunter Dashboard</h1>
-            <p style="margin: 5px 0 0 0; font-size: 13px; color: #666;">Sidan genererades (GitHub Pages): 2026-07-08 09:32:03</p>
-            <p style="margin: 2px 0 0 0; font-size: 13px; color: #666;">Senaste skrapning (Lokalt): 2026-07-08 09:32:03</p>
+            <p style="margin: 5px 0 0 0; font-size: 13px; color: #666;">Sidan genererades (GitHub Pages): 2026-07-08 11:26:05</p>
+            <p style="margin: 2px 0 0 0; font-size: 13px; color: #666;">Senaste skrapning (Lokalt): 2026-07-08 11:26:05</p>
         </header>
 
         <!-- Database Stats -->
         <div class="stats-grid">
             <div class="stat-card">
                 <span class="stat-label">Aktiva fynd i Norrland</span>
-                <span class="stat-value">23 st</span>
+                <span class="stat-value">31 st</span>
             </div>
             <div class="stat-card">
                 <span class="stat-label">Godkända bilar i databasen</span>
-                <span class="stat-value">342 st</span>
+                <span class="stat-value">383 st</span>
             </div>
             <div class="stat-card">
                 <span class="stat-label">Totalt indexerade bilar (Sverige)</span>
-                <span class="stat-value">3807 st</span>
+                <span class="stat-value">3853 st</span>
             </div>
         </div>
 
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th onclick="sortTable(0, true)" style="cursor: pointer;">Value Index</th>
-                        <th onclick="sortTable(1, false)" style="cursor: pointer;">AI-Betyg</th>
-                        <th onclick="sortTable(2, false)" style="cursor: pointer;">Titel</th>
-                        <th onclick="sortTable(3, false)" style="cursor: pointer;">Modell</th>
-                        <th onclick="sortTable(4, true)" style="cursor: pointer;">Pris</th>
-                        <th onclick="sortTable(5, true)" style="cursor: pointer;">Miltal</th>
-                        <th onclick="sortTable(6, true)" style="cursor: pointer;">Årsmodell</th>
-                        <th onclick="sortTable(7, false)" style="cursor: pointer;">Plats</th>
-                        <th onclick="sortTable(8, false)" style="cursor: pointer;">Utrustning & Analys</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-        <tr>
-            <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("23617861")'><span class='badge badge-positive'>+9.1%</span><span class='tooltiptext'>Marknadsvärde: 68 178 kr
+        <!-- Campaign Tabs -->
+        <div class="campaign-tabs">
+            <button class="tab-button active" onclick="switchCampaign(event, 'norrland')">Norrlandsfynden</button>
+            <button class="tab-button" onclick="switchCampaign(event, 'corolla_cross')">Corolla Cross Hunt</button>
+        </div>
+
+        <!-- Norrland Campaign Section -->
+        <div id="campaign-norrland" class="campaign-section active">
+            <div class="table-container">
+                <table id="table-norrland">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable('table-norrland', 0, true)" style="cursor: pointer;">Value Index</th>
+                            <th onclick="sortTable('table-norrland', 1, false)" style="cursor: pointer;">AI-Betyg</th>
+                            <th onclick="sortTable('table-norrland', 2, false)" style="cursor: pointer;">Titel</th>
+                            <th onclick="sortTable('table-norrland', 3, false)" style="cursor: pointer;">Modell</th>
+                            <th onclick="sortTable('table-norrland', 4, true)" style="cursor: pointer;">Pris</th>
+                            <th onclick="sortTable('table-norrland', 5, true)" style="cursor: pointer;">Miltal</th>
+                            <th onclick="sortTable('table-norrland', 6, true)" style="cursor: pointer;">Årsmodell</th>
+                            <th onclick="sortTable('table-norrland', 7, false)" style="cursor: pointer;">Plats</th>
+                            <th onclick="sortTable('table-norrland', 8, false)" style="cursor: pointer;">Utrustning & Analys</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("23617861")'><span class='badge badge-positive'>+9.1%</span><span class='tooltiptext'>Marknadsvärde: 68 178 kr
 Faktiskt pris: 62 000 kr
 Differens: 6 178 kr</span></div></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/23617861" target="_blank">Volvo V70</a></td>
-            <td>Volvo V70</td>
-            <td>62 000 kr</td>
-            <td>27 200 mil</td>
-            <td>2011</td>
-            <td>Norsjö</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/23617861" target="_blank">Volvo V70</a></td>
+                <td>Volvo V70</td>
+                <td>62 000 kr</td>
+                <td>27 200 mil</td>
+                <td>2011</td>
+                <td>Norsjö</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24522568")'><span class='badge badge-positive'>+23.1%</span><span class='tooltiptext'>Marknadsvärde: 71 503 kr
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24522568")'><span class='badge badge-positive'>+23.1%</span><span class='tooltiptext'>Marknadsvärde: 71 503 kr
 Faktiskt pris: 55 000 kr
 Differens: 16 503 kr</span></div></td>
-            <td><div class='tooltip clickable-cell' onclick='openModal("24522568")'><span class='badge badge-positive'>C</span><span class='tooltiptext'>🎯 Betyg C: Prisvärd med utrustning, men extremt högt miltal ökar framtida risker.</span></div></td>
-            <td><a href="https://www.blocket.se/mobility/item/24522568" target="_blank">Volkswagen Golf VII</a></td>
-            <td>Volkswagen Golf</td>
-            <td>55 000 kr</td>
-            <td>29 000 mil</td>
-            <td>2017</td>
-            <td>Kalix</td>
-            <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge'>✅ Dragkrok</span></div></td>
-        </tr>
-        
+                <td><div class='tooltip clickable-cell' onclick='openModal("24522568")'><span class='badge badge-positive'>C</span><span class='tooltiptext'>🎯 Betyg C: Prisvärd med utrustning, men extremt högt miltal ökar framtida risker.</span></div></td>
+                <td><a href="https://www.blocket.se/mobility/item/24522568" target="_blank">Volkswagen Golf VII</a></td>
+                <td>Volkswagen Golf</td>
+                <td>55 000 kr</td>
+                <td>29 000 mil</td>
+                <td>2017</td>
+                <td>Kalix</td>
+                <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge'>✅ Dragkrok</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><span class='badge'>-</span></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/20965209" target="_blank">BMW X3</a></td>
-            <td>BMW X3</td>
-            <td>65 000 kr</td>
-            <td>30 000 mil</td>
-            <td>2012</td>
-            <td>Vindeln</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+            <tr>
+                <td><span class='badge'>-</span></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/20965209" target="_blank">BMW X3</a></td>
+                <td>BMW X3</td>
+                <td>65 000 kr</td>
+                <td>30 000 mil</td>
+                <td>2012</td>
+                <td>Vindeln</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24635685")'><span class='badge'>-1.9%</span><span class='tooltiptext'>Marknadsvärde: 23 551 kr
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24635685")'><span class='badge'>-1.9%</span><span class='tooltiptext'>Marknadsvärde: 23 551 kr
 Faktiskt pris: 24 000 kr
 Differens: -448 kr</span></div></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/24635685" target="_blank">Volvo V50</a></td>
-            <td>Volvo V50</td>
-            <td>24 000 kr</td>
-            <td>32 439 mil</td>
-            <td>2008</td>
-            <td>Sundsvall</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24635685" target="_blank">Volvo V50</a></td>
+                <td>Volvo V50</td>
+                <td>24 000 kr</td>
+                <td>32 439 mil</td>
+                <td>2008</td>
+                <td>Sundsvall</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><span class='badge'>-</span></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/24627617" target="_blank">BMW 328i</a></td>
-            <td>BMW 328i</td>
-            <td>98 000 kr</td>
-            <td>23 437 mil</td>
-            <td>2013</td>
-            <td>Boden</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+            <tr>
+                <td><span class='badge'>-</span></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24627617" target="_blank">BMW 328i</a></td>
+                <td>BMW 328i</td>
+                <td>98 000 kr</td>
+                <td>23 437 mil</td>
+                <td>2013</td>
+                <td>Boden</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><span class='badge'>-</span></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/24625071" target="_blank">BMW 525d</a></td>
-            <td>BMW 525d</td>
-            <td>90 000 kr</td>
-            <td>28 100 mil</td>
-            <td>2011</td>
-            <td>Luleå</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+            <tr>
+                <td><span class='badge'>-</span></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24625071" target="_blank">BMW 525d</a></td>
+                <td>BMW 525d</td>
+                <td>90 000 kr</td>
+                <td>28 100 mil</td>
+                <td>2011</td>
+                <td>Luleå</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><span class='badge'>-</span></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/24619881" target="_blank">Volvo XC60</a></td>
-            <td>Volvo XC60</td>
-            <td>128 000 kr</td>
-            <td>21 500 mil</td>
-            <td>2015</td>
-            <td>Umeå</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+            <tr>
+                <td><span class='badge'>-</span></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24619881" target="_blank">Volvo XC60</a></td>
+                <td>Volvo XC60</td>
+                <td>128 000 kr</td>
+                <td>21 500 mil</td>
+                <td>2015</td>
+                <td>Umeå</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24619133")'><span class='badge badge-positive'>+26.7%</span><span class='tooltiptext'>Marknadsvärde: 107 719 kr
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24619133")'><span class='badge badge-positive'>+26.7%</span><span class='tooltiptext'>Marknadsvärde: 107 719 kr
 Faktiskt pris: 79 000 kr
 Differens: 28 719 kr</span></div></td>
-            <td><div class='tooltip clickable-cell' onclick='openModal("24619133")'><span class='badge badge-positive'>A</span><span class='tooltiptext'>🎯 Betyg A: Mycket prisvärd, bra utrustning och motor/växellåda går bra trots mindre skavanker.</span></div></td>
-            <td><a href="https://www.blocket.se/mobility/item/24619133" target="_blank">BMW 320d</a></td>
-            <td>BMW 320d</td>
-            <td>79 000 kr</td>
-            <td>19 900 mil</td>
-            <td>2011</td>
-            <td>Luleå</td>
-            <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge'>✅ Dragkrok</span><span class='badge'>✅ Motorvärmare</span><span class='badge'>✅ Kupévärmare</span><span class='badge badge-warning' title='parkeringsskada vänster fram, mindre skavanker, slitna sommardäck, gamla vinterdäck, slitna vinterfälgar'>🔧 Fel: parkeringsskada vänster fram, mindre skavanker, slitna sommardäck, gamla vinterdäck, slitna vinterfälgar</span></div></td>
-        </tr>
-        
+                <td><div class='tooltip clickable-cell' onclick='openModal("24619133")'><span class='badge badge-positive'>A</span><span class='tooltiptext'>🎯 Betyg A: Mycket prisvärd, bra utrustning och motor/växellåda går bra trots mindre skavanker.</span></div></td>
+                <td><a href="https://www.blocket.se/mobility/item/24619133" target="_blank">BMW 320d</a></td>
+                <td>BMW 320d</td>
+                <td>79 000 kr</td>
+                <td>19 900 mil</td>
+                <td>2011</td>
+                <td>Luleå</td>
+                <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge'>✅ Dragkrok</span><span class='badge'>✅ Motorvärmare</span><span class='badge'>✅ Kupévärmare</span><span class='badge badge-warning' title='parkeringsskada vänster fram, mindre skavanker, slitna sommardäck, gamla vinterdäck, slitna vinterfälgar'>🔧 Fel: parkeringsskada vänster fram, mindre skavanker, slitna sommardäck, gamla vinterdäck, slitna vinterfälgar</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24616978")'><span class='badge badge-positive'>+13.5%</span><span class='tooltiptext'>Marknadsvärde: 35 849 kr
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24616978")'><span class='badge badge-positive'>+13.5%</span><span class='tooltiptext'>Marknadsvärde: 35 849 kr
 Faktiskt pris: 31 000 kr
 Differens: 4 849 kr</span></div></td>
-            <td><div class='tooltip clickable-cell' onclick='openModal("24616978")'><span class='badge badge-positive'>A+</span><span class='tooltiptext'>🎯 Betyg A+: Mycket prisvärd, nyservad med nya delar, och i fint skick.</span></div></td>
-            <td><a href="https://www.blocket.se/mobility/item/24616978" target="_blank">Volvo V70</a></td>
-            <td>Volvo V70</td>
-            <td>31 000 kr</td>
-            <td>27 167 mil</td>
-            <td>2008</td>
-            <td>Njutånger</td>
-            <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge'>✅ Dragkrok</span><span class='badge'>✅ Motorvärmare</span><span class='badge'>✅ Nyservad</span></div></td>
-        </tr>
-        
+                <td><div class='tooltip clickable-cell' onclick='openModal("24616978")'><span class='badge badge-positive'>A+</span><span class='tooltiptext'>🎯 Betyg A+: Mycket prisvärd, nyservad med nya delar, och i fint skick.</span></div></td>
+                <td><a href="https://www.blocket.se/mobility/item/24616978" target="_blank">Volvo V70</a></td>
+                <td>Volvo V70</td>
+                <td>31 000 kr</td>
+                <td>27 167 mil</td>
+                <td>2008</td>
+                <td>Njutånger</td>
+                <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge'>✅ Dragkrok</span><span class='badge'>✅ Motorvärmare</span><span class='badge'>✅ Nyservad</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24604956")'><span class='badge badge-positive'>+39.4%</span><span class='tooltiptext'>Marknadsvärde: 69 308 kr
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24604956")'><span class='badge badge-positive'>+39.4%</span><span class='tooltiptext'>Marknadsvärde: 69 308 kr
 Faktiskt pris: 42 000 kr
 Differens: 27 308 kr</span></div></td>
-            <td><div class='tooltip clickable-cell' onclick='openModal("24604956")'><span class='badge badge-positive'>A</span><span class='tooltiptext'>🎯 Betyg A: Mycket prisvärd trots rost och slitage, nyligen besiktigad utan anmärkning.</span></div></td>
-            <td><a href="https://www.blocket.se/mobility/item/24604956" target="_blank">Volkswagen Passat</a></td>
-            <td>Volkswagen Passat</td>
-            <td>42 000 kr</td>
-            <td>25 030 mil</td>
-            <td>2012</td>
-            <td>Piteå</td>
-            <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge badge-warning'>❌ Ej drag</span><span class='badge badge-warning'>⚠️ Defekter</span><span class='badge badge-warning' title='Slitage i lacken och rost.'>🔧 Fel: Slitage i lacken och rost.</span></div></td>
-        </tr>
-        
+                <td><div class='tooltip clickable-cell' onclick='openModal("24604956")'><span class='badge badge-positive'>A</span><span class='tooltiptext'>🎯 Betyg A: Mycket prisvärd trots rost och slitage, nyligen besiktigad utan anmärkning.</span></div></td>
+                <td><a href="https://www.blocket.se/mobility/item/24604956" target="_blank">Volkswagen Passat</a></td>
+                <td>Volkswagen Passat</td>
+                <td>42 000 kr</td>
+                <td>25 030 mil</td>
+                <td>2012</td>
+                <td>Piteå</td>
+                <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge badge-warning'>❌ Ej drag</span><span class='badge badge-warning'>⚠️ Defekter</span><span class='badge badge-warning' title='Slitage i lacken och rost.'>🔧 Fel: Slitage i lacken och rost.</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><span class='badge'>-</span></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/24617079" target="_blank">Volkswagen Caddy</a></td>
-            <td>Volkswagen Caddy</td>
-            <td>25 000 kr</td>
-            <td>19 200 mil</td>
-            <td>2008</td>
-            <td>Kalix</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+            <tr>
+                <td><span class='badge'>-</span></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24617079" target="_blank">Volkswagen Caddy</a></td>
+                <td>Volkswagen Caddy</td>
+                <td>25 000 kr</td>
+                <td>19 200 mil</td>
+                <td>2008</td>
+                <td>Kalix</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24588906")'><span class='badge badge-positive'>+56.9%</span><span class='tooltiptext'>Marknadsvärde: 27 846 kr
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24588906")'><span class='badge badge-positive'>+56.9%</span><span class='tooltiptext'>Marknadsvärde: 27 846 kr
 Faktiskt pris: 12 000 kr
 Differens: 15 846 kr</span></div></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/24588906" target="_blank">Skoda Fabia</a></td>
-            <td>Skoda Fabia</td>
-            <td>12 000 kr</td>
-            <td>19 800 mil</td>
-            <td>2009</td>
-            <td>Kalix</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24588906" target="_blank">Skoda Fabia</a></td>
+                <td>Skoda Fabia</td>
+                <td>12 000 kr</td>
+                <td>19 800 mil</td>
+                <td>2009</td>
+                <td>Kalix</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24429598")'><span class='badge badge-positive'>+25.6%</span><span class='tooltiptext'>Marknadsvärde: 25 408 kr
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24429598")'><span class='badge badge-positive'>+25.6%</span><span class='tooltiptext'>Marknadsvärde: 25 408 kr
 Faktiskt pris: 18 900 kr
 Differens: 6 508 kr</span></div></td>
-            <td><div class='tooltip clickable-cell' onclick='openModal("24429598")'><span class='badge badge-positive'>A+</span><span class='tooltiptext'>🎯 Betyg A+: Mycket prisvärd, nyservad och i bra skick trots höga mil. Hög potential.</span></div></td>
-            <td><a href="https://www.blocket.se/mobility/item/24429598" target="_blank">Volvo V50</a></td>
-            <td>Volvo V50</td>
-            <td>18 900 kr</td>
-            <td>28 900 mil</td>
-            <td>2007</td>
-            <td>Skellefteå</td>
-            <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge'>✅ Dragkrok</span><span class='badge'>✅ Motorvärmare</span><span class='badge'>✅ Kupévärmare</span><span class='badge'>✅ Nyservad</span><span class='badge'>⚙️ Kamkedja</span></div></td>
-        </tr>
-        
+                <td><div class='tooltip clickable-cell' onclick='openModal("24429598")'><span class='badge badge-positive'>A+</span><span class='tooltiptext'>🎯 Betyg A+: Mycket prisvärd, nyservad och i bra skick trots höga mil. Hög potential.</span></div></td>
+                <td><a href="https://www.blocket.se/mobility/item/24429598" target="_blank">Volvo V50</a></td>
+                <td>Volvo V50</td>
+                <td>18 900 kr</td>
+                <td>28 900 mil</td>
+                <td>2007</td>
+                <td>Skellefteå</td>
+                <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge'>✅ Dragkrok</span><span class='badge'>✅ Motorvärmare</span><span class='badge'>✅ Kupévärmare</span><span class='badge'>✅ Nyservad</span><span class='badge'>⚙️ Kamkedja</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><span class='badge'>-</span></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/24615405" target="_blank">Kia Rio</a></td>
-            <td>Kia Rio</td>
-            <td>45 000 kr</td>
-            <td>23 190 mil</td>
-            <td>2012</td>
-            <td>Enånger</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+            <tr>
+                <td><span class='badge'>-</span></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24615405" target="_blank">Kia Rio</a></td>
+                <td>Kia Rio</td>
+                <td>45 000 kr</td>
+                <td>23 190 mil</td>
+                <td>2012</td>
+                <td>Enånger</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24613368")'><span class='badge'>-73.7%</span><span class='tooltiptext'>Marknadsvärde: 71 966 kr
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24613368")'><span class='badge'>-73.7%</span><span class='tooltiptext'>Marknadsvärde: 71 966 kr
 Faktiskt pris: 125 000 kr
 Differens: -53 033 kr</span></div></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/24613368" target="_blank">Volkswagen Passat Alltrack</a></td>
-            <td>Volkswagen Passat</td>
-            <td>125 000 kr</td>
-            <td>12 750 mil</td>
-            <td>2013</td>
-            <td>Sundsvall</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24613368" target="_blank">Volkswagen Passat Alltrack</a></td>
+                <td>Volkswagen Passat</td>
+                <td>125 000 kr</td>
+                <td>12 750 mil</td>
+                <td>2013</td>
+                <td>Sundsvall</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><span class='badge'>-</span></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/23365129" target="_blank">Skoda Superb</a></td>
-            <td>Skoda Superb</td>
-            <td>36 000 kr</td>
-            <td>20 000 mil</td>
-            <td>2012</td>
-            <td>Örnsköldsvik</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+            <tr>
+                <td><span class='badge'>-</span></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/23365129" target="_blank">Skoda Superb</a></td>
+                <td>Skoda Superb</td>
+                <td>36 000 kr</td>
+                <td>20 000 mil</td>
+                <td>2012</td>
+                <td>Örnsköldsvik</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><span class='badge'>-</span></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/24610075" target="_blank">BMW 320i</a></td>
-            <td>BMW 320i</td>
-            <td>28 000 kr</td>
-            <td>26 150 mil</td>
-            <td>2007</td>
-            <td>Älvsbyn</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+            <tr>
+                <td><span class='badge'>-</span></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24610075" target="_blank">BMW 320i</a></td>
+                <td>BMW 320i</td>
+                <td>28 000 kr</td>
+                <td>26 150 mil</td>
+                <td>2007</td>
+                <td>Älvsbyn</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><span class='badge'>-</span></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/23291341" target="_blank">Volvo XC60</a></td>
-            <td>Volvo XC60</td>
-            <td>63 000 kr</td>
-            <td>30 012 mil</td>
-            <td>2010</td>
-            <td>Lycksele</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+            <tr>
+                <td><span class='badge'>-</span></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/23291341" target="_blank">Volvo XC60</a></td>
+                <td>Volvo XC60</td>
+                <td>63 000 kr</td>
+                <td>30 012 mil</td>
+                <td>2010</td>
+                <td>Lycksele</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24423152")'><span class='badge'>-28.9%</span><span class='tooltiptext'>Marknadsvärde: 27 540 kr
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24423152")'><span class='badge'>-28.9%</span><span class='tooltiptext'>Marknadsvärde: 27 540 kr
 Faktiskt pris: 35 500 kr
 Differens: -7 959 kr</span></div></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/24423152" target="_blank">Volkswagen Passat</a></td>
-            <td>Volkswagen Passat</td>
-            <td>35 500 kr</td>
-            <td>218 006 mil</td>
-            <td>2008</td>
-            <td>Älvsbyn</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24423152" target="_blank">Volkswagen Passat</a></td>
+                <td>Volkswagen Passat</td>
+                <td>35 500 kr</td>
+                <td>218 006 mil</td>
+                <td>2008</td>
+                <td>Älvsbyn</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24609441")'><span class='badge badge-positive'>+29.2%</span><span class='tooltiptext'>Marknadsvärde: 77 703 kr
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24609441")'><span class='badge badge-positive'>+29.2%</span><span class='tooltiptext'>Marknadsvärde: 77 703 kr
 Faktiskt pris: 55 000 kr
 Differens: 22 703 kr</span></div></td>
-            <td><div class='tooltip clickable-cell' onclick='openModal("24609441")'><span class='badge badge-positive'>B</span><span class='tooltiptext'>🎯 Betyg B: Mycket prisvärd med bra utrustning, men extremt högt miltal.</span></div></td>
-            <td><a href="https://www.blocket.se/mobility/item/24609441" target="_blank">Volvo V70</a></td>
-            <td>Volvo V70</td>
-            <td>55 000 kr</td>
-            <td>39 600 mil</td>
-            <td>2012</td>
-            <td>Kalix</td>
-            <td><div class='features-container'><span class='badge badge-warning'>⚠️ Flip: Low</span><span class='badge badge-warning'>❌ Ej drag</span><span class='badge'>✅ Motorvärmare</span><span class='badge'>✅ Kupévärmare</span><span class='badge badge-warning' title='Sämre vinterdäck'>🔧 Fel: Sämre vinterdäck</span></div></td>
-        </tr>
-        
+                <td><div class='tooltip clickable-cell' onclick='openModal("24609441")'><span class='badge badge-positive'>B</span><span class='tooltiptext'>🎯 Betyg B: Mycket prisvärd med bra utrustning, men extremt högt miltal.</span></div></td>
+                <td><a href="https://www.blocket.se/mobility/item/24609441" target="_blank">Volvo V70</a></td>
+                <td>Volvo V70</td>
+                <td>55 000 kr</td>
+                <td>39 600 mil</td>
+                <td>2012</td>
+                <td>Kalix</td>
+                <td><div class='features-container'><span class='badge badge-warning'>⚠️ Flip: Low</span><span class='badge badge-warning'>❌ Ej drag</span><span class='badge'>✅ Motorvärmare</span><span class='badge'>✅ Kupévärmare</span><span class='badge badge-warning' title='Sämre vinterdäck'>🔧 Fel: Sämre vinterdäck</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24599529")'><span class='badge badge-positive'>+62.5%</span><span class='tooltiptext'>Marknadsvärde: 66 706 kr
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24599529")'><span class='badge badge-positive'>+62.5%</span><span class='tooltiptext'>Marknadsvärde: 66 706 kr
 Faktiskt pris: 25 000 kr
 Differens: 41 706 kr</span></div></td>
-            <td><div class='tooltip clickable-cell' onclick='openModal("24599529")'><span class='badge badge-positive'>A</span><span class='tooltiptext'>🎯 Betyg A: Mycket prisvärd, går bra och har bra utrustning trots kosmetiska skavanker.</span></div></td>
-            <td><a href="https://www.blocket.se/mobility/item/24599529" target="_blank">Volvo V70</a></td>
-            <td>Volvo V70</td>
-            <td>25 000 kr</td>
-            <td>41 770 mil</td>
-            <td>2011</td>
-            <td>Luleå</td>
-            <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge'>✅ Dragkrok</span><span class='badge'>✅ Kupévärmare</span><span class='badge badge-warning' title='Yttre skavanker/repor och stenskott finns. Däck bedöms hålla en säsong.'>🔧 Fel: Yttre skavanker/repor och stenskott finns. Däck bedöms hålla en säsong.</span></div></td>
-        </tr>
-        
+                <td><div class='tooltip clickable-cell' onclick='openModal("24599529")'><span class='badge badge-positive'>A</span><span class='tooltiptext'>🎯 Betyg A: Mycket prisvärd, går bra och har bra utrustning trots kosmetiska skavanker.</span></div></td>
+                <td><a href="https://www.blocket.se/mobility/item/24599529" target="_blank">Volvo V70</a></td>
+                <td>Volvo V70</td>
+                <td>25 000 kr</td>
+                <td>41 770 mil</td>
+                <td>2011</td>
+                <td>Luleå</td>
+                <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge'>✅ Dragkrok</span><span class='badge'>✅ Kupévärmare</span><span class='badge badge-warning' title='Yttre skavanker/repor och stenskott finns. Däck bedöms hålla en säsong.'>🔧 Fel: Yttre skavanker/repor och stenskott finns. Däck bedöms hålla en säsong.</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><span class='badge'>-</span></td>
-            <td><span class='badge'>-</span></td>
-            <td><a href="https://www.blocket.se/mobility/item/24593375" target="_blank">Kia Venga</a></td>
-            <td>Kia Venga</td>
-            <td>97 900 kr</td>
-            <td>3 319 mil</td>
-            <td>2014</td>
-            <td>Luleå</td>
-            <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
-        </tr>
-        
+            <tr>
+                <td><span class='badge'>-</span></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24593375" target="_blank">Kia Venga</a></td>
+                <td>Kia Venga</td>
+                <td>97 900 kr</td>
+                <td>3 319 mil</td>
+                <td>2014</td>
+                <td>Luleå</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
 
-        <tr>
-            <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24570938")'><span class='badge'>-23.3%</span><span class='tooltiptext'>Marknadsvärde: 35 607 kr
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24570938")'><span class='badge'>-23.3%</span><span class='tooltiptext'>Marknadsvärde: 35 607 kr
 Faktiskt pris: 43 900 kr
 Differens: -8 292 kr</span></div></td>
-            <td><div class='tooltip clickable-cell' onclick='openModal("24570938")'><span class='badge badge-positive'>A</span><span class='tooltiptext'>🎯 Betyg A: Mycket prisvärd och välfungerande, utrustad, kräver mindre bakskärmsfix.</span></div></td>
-            <td><a href="https://www.blocket.se/mobility/item/24570938" target="_blank">Volvo V70</a></td>
-            <td>Volvo V70</td>
-            <td>43 900 kr</td>
-            <td>29 560 mil</td>
-            <td>2008</td>
-            <td>Luleå</td>
-            <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge badge-warning'>❌ Ej drag</span><span class='badge'>✅ Motorvärmare</span><span class='badge'>✅ Kupévärmare</span><span class='badge badge-warning' title='Fix vänster bakskärm, endast sommardäck'>🔧 Fel: Fix vänster bakskärm, endast sommardäck</span></div></td>
-        </tr>
-        
-                </tbody>
-            </table>
+                <td><div class='tooltip clickable-cell' onclick='openModal("24570938")'><span class='badge badge-positive'>A</span><span class='tooltiptext'>🎯 Betyg A: Mycket prisvärd och välfungerande, utrustad, kräver mindre bakskärmsfix.</span></div></td>
+                <td><a href="https://www.blocket.se/mobility/item/24570938" target="_blank">Volvo V70</a></td>
+                <td>Volvo V70</td>
+                <td>43 900 kr</td>
+                <td>29 560 mil</td>
+                <td>2008</td>
+                <td>Luleå</td>
+                <td><div class='features-container'><span class='badge badge-positive'>🚀 Flip: High</span><span class='badge badge-warning'>❌ Ej drag</span><span class='badge'>✅ Motorvärmare</span><span class='badge'>✅ Kupévärmare</span><span class='badge badge-warning' title='Fix vänster bakskärm, endast sommardäck'>🔧 Fel: Fix vänster bakskärm, endast sommardäck</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("682d3ae9-6fe2-4594-b9dc-49e86fe41c35")'><span class='badge badge-positive'>+2.5%</span><span class='tooltiptext'>Marknadsvärde: 338 296 kr
+Faktiskt pris: 329 800 kr
+Differens: 8 496 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.wayke.se/objekt/682d3ae9-6fe2-4594-b9dc-49e86fe41c35" target="_blank">Toyota RAV4 Laddhybrid</a></td>
+                <td>Toyota RAV4</td>
+                <td>329 800 kr</td>
+                <td>13 187 mil</td>
+                <td>2021</td>
+                <td>Sundsvall</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("74c9e613-deb4-4dca-a931-c66bc2b5b5a5")'><span class='badge badge-positive'>+0.7%</span><span class='tooltiptext'>Marknadsvärde: 352 388 kr
+Faktiskt pris: 349 800 kr
+Differens: 2 588 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.wayke.se/objekt/74c9e613-deb4-4dca-a931-c66bc2b5b5a5" target="_blank">Toyota RAV4 Hybrid AWD-i</a></td>
+                <td>Toyota RAV4</td>
+                <td>349 800 kr</td>
+                <td>5 681 mil</td>
+                <td>2020</td>
+                <td>Sundsvall</td>
+                <td><div class='features-container'><span class='badge badge-warning'>⚠️ Flip: Low</span><span class='badge'>✅ Dragkrok</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("4f48a276-3eda-4600-8f44-a7bfb914287a")'><span class='badge badge-positive'>+2.8%</span><span class='tooltiptext'>Marknadsvärde: 401 151 kr
+Faktiskt pris: 389 800 kr
+Differens: 11 351 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.wayke.se/objekt/4f48a276-3eda-4600-8f44-a7bfb914287a" target="_blank">Toyota RAV4 Hybrid AWD-i</a></td>
+                <td>Toyota RAV4</td>
+                <td>389 800 kr</td>
+                <td>5 599 mil</td>
+                <td>2022</td>
+                <td>Sundsvall</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("22209258")'><span class='badge'>-10.2%</span><span class='tooltiptext'>Marknadsvärde: 408 022 kr
+Faktiskt pris: 449 800 kr
+Differens: -41 777 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/22209258" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
+                <td>Toyota RAV4</td>
+                <td>449 800 kr</td>
+                <td>8 993 mil</td>
+                <td>2023</td>
+                <td>Sundsvall</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24539700")'><span class='badge badge-positive'>+2.5%</span><span class='tooltiptext'>Marknadsvärde: 338 296 kr
+Faktiskt pris: 329 800 kr
+Differens: 8 496 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24539700" target="_blank">Toyota RAV4 Plug-in Hybrid</a></td>
+                <td>Toyota RAV4</td>
+                <td>329 800 kr</td>
+                <td>13 187 mil</td>
+                <td>2021</td>
+                <td>Sundsvall</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24535791")'><span class='badge badge-positive'>+0.7%</span><span class='tooltiptext'>Marknadsvärde: 352 388 kr
+Faktiskt pris: 349 800 kr
+Differens: 2 588 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24535791" target="_blank">Toyota RAV4</a></td>
+                <td>Toyota RAV4</td>
+                <td>349 800 kr</td>
+                <td>5 681 mil</td>
+                <td>2020</td>
+                <td>Sundsvall</td>
+                <td><div class='features-container'><span class='badge'>✅ Dragkrok</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("23600516")'><span class='badge badge-positive'>+4.9%</span><span class='tooltiptext'>Marknadsvärde: 499 440 kr
+Faktiskt pris: 474 800 kr
+Differens: 24 640 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/23600516" target="_blank">Toyota RAV4</a></td>
+                <td>Toyota RAV4</td>
+                <td>474 800 kr</td>
+                <td>544 mil</td>
+                <td>2025</td>
+                <td>Sundsvall</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24523808")'><span class='badge badge-positive'>+2.8%</span><span class='tooltiptext'>Marknadsvärde: 401 151 kr
+Faktiskt pris: 389 800 kr
+Differens: 11 351 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24523808" target="_blank">Toyota RAV4</a></td>
+                <td>Toyota RAV4</td>
+                <td>389 800 kr</td>
+                <td>5 599 mil</td>
+                <td>2022</td>
+                <td>Sundsvall</td>
+                <td><div class='features-container'><span class='badge badge-warning'>❌ Ej drag</span></div></td>
+            </tr>
+            
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
+
+        <!-- Corolla Cross Campaign Section -->
+        <div id="campaign-corolla_cross" class="campaign-section">
+            <div class="table-container">
+                <table id="table-corolla">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable('table-corolla', 0, true)" style="cursor: pointer;">Value Index</th>
+                            <th onclick="sortTable('table-corolla', 1, false)" style="cursor: pointer;">AI-Betyg</th>
+                            <th onclick="sortTable('table-corolla', 2, false)" style="cursor: pointer;">Titel</th>
+                            <th onclick="sortTable('table-corolla', 3, false)" style="cursor: pointer;">Modell</th>
+                            <th onclick="sortTable('table-corolla', 4, true)" style="cursor: pointer;">Pris</th>
+                            <th onclick="sortTable('table-corolla', 5, true)" style="cursor: pointer;">Miltal</th>
+                            <th onclick="sortTable('table-corolla', 6, true)" style="cursor: pointer;">Årsmodell</th>
+                            <th onclick="sortTable('table-corolla', 7, false)" style="cursor: pointer;">Plats</th>
+                            <th onclick="sortTable('table-corolla', 8, false)" style="cursor: pointer;">Utrustning & Analys</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24649075")'><span class='badge'>-7.1%</span><span class='tooltiptext'>Marknadsvärde: 392 092 kr
+Faktiskt pris: 419 900 kr
+Differens: -27 807 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24649075" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>419 900 kr</td>
+                <td>0 mil</td>
+                <td>2025</td>
+                <td>Jönköping</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("22652864")'><span class='badge'>-9.7%</span><span class='tooltiptext'>Marknadsvärde: 345 322 kr
+Faktiskt pris: 378 900 kr
+Differens: -33 577 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/22652864" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>378 900 kr</td>
+                <td>3 268 mil</td>
+                <td>2022</td>
+                <td>Örebro</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("21812938")'><span class='badge badge-positive'>+0.8%</span><span class='tooltiptext'>Marknadsvärde: 342 696 kr
+Faktiskt pris: 339 900 kr
+Differens: 2 796 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/21812938" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>339 900 kr</td>
+                <td>6 626 mil</td>
+                <td>2023</td>
+                <td>Uppsala</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><span class='badge'>-</span></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24629901" target="_blank">Toyota Corolla</a></td>
+                <td>Toyota Corolla</td>
+                <td>379 000 kr</td>
+                <td>1 625 mil</td>
+                <td>2025</td>
+                <td>Skövde</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24627299")'><span class='badge badge-positive'>+5.8%</span><span class='tooltiptext'>Marknadsvärde: 387 382 kr
+Faktiskt pris: 364 800 kr
+Differens: 22 582 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24627299" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>364 800 kr</td>
+                <td>1 150 mil</td>
+                <td>2025</td>
+                <td>Kalmar</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("23773567")'><span class='badge'>-6.4%</span><span class='tooltiptext'>Marknadsvärde: 390 151 kr
+Faktiskt pris: 415 000 kr
+Differens: -24 848 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/23773567" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>415 000 kr</td>
+                <td>474 mil</td>
+                <td>2025</td>
+                <td>Mjölby</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24605168")'><span class='badge badge-positive'>+4.5%</span><span class='tooltiptext'>Marknadsvärde: 344 392 kr
+Faktiskt pris: 329 000 kr
+Differens: 15 392 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24605168" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>329 000 kr</td>
+                <td>6 212 mil</td>
+                <td>2023</td>
+                <td>Trollhättan</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24605052")'><span class='badge'>-8.7%</span><span class='tooltiptext'>Marknadsvärde: 391 068 kr
+Faktiskt pris: 424 900 kr
+Differens: -33 831 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24605052" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>424 900 kr</td>
+                <td>250 mil</td>
+                <td>2025</td>
+                <td>Hudiksvall</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24602455")'><span class='badge'>-7.0%</span><span class='tooltiptext'>Marknadsvärde: 345 015 kr
+Faktiskt pris: 369 000 kr
+Differens: -23 984 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24602455" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>369 000 kr</td>
+                <td>6 060 mil</td>
+                <td>2023</td>
+                <td>Norrköping</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24599848")'><span class='badge badge-positive'>+3.7%</span><span class='tooltiptext'>Marknadsvärde: 362 254 kr
+Faktiskt pris: 349 000 kr
+Differens: 13 254 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24599848" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>349 000 kr</td>
+                <td>4 568 mil</td>
+                <td>2024</td>
+                <td>Lund</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24596624")'><span class='badge badge-positive'>+1.5%</span><span class='tooltiptext'>Marknadsvärde: 354 333 kr
+Faktiskt pris: 349 000 kr
+Differens: 5 333 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24596624" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>349 000 kr</td>
+                <td>3 785 mil</td>
+                <td>2023</td>
+                <td>Karlskoga</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("21974472")'><span class='badge badge-positive'>+1.6%</span><span class='tooltiptext'>Marknadsvärde: 350 409 kr
+Faktiskt pris: 344 800 kr
+Differens: 5 609 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/21974472" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>344 800 kr</td>
+                <td>4 743 mil</td>
+                <td>2023</td>
+                <td>Bromma</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24591989")'><span class='badge'>-4.3%</span><span class='tooltiptext'>Marknadsvärde: 388 099 kr
+Faktiskt pris: 404 900 kr
+Differens: -16 800 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24591989" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>404 900 kr</td>
+                <td>975 mil</td>
+                <td>2025</td>
+                <td>Täby</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("23808253")'><span class='badge badge-positive'>+2.5%</span><span class='tooltiptext'>Marknadsvärde: 353 899 kr
+Faktiskt pris: 344 900 kr
+Differens: 8 999 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/23808253" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>344 900 kr</td>
+                <td>3 891 mil</td>
+                <td>2023</td>
+                <td>Borås</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("23123510")'><span class='badge'>-1.3%</span><span class='tooltiptext'>Marknadsvärde: 375 021 kr
+Faktiskt pris: 379 900 kr
+Differens: -4 878 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/23123510" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>379 900 kr</td>
+                <td>1 451 mil</td>
+                <td>2024</td>
+                <td>Täby</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("21071935")'><span class='badge'>-5.9%</span><span class='tooltiptext'>Marknadsvärde: 372 785 kr
+Faktiskt pris: 394 800 kr
+Differens: -22 014 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/21071935" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>394 800 kr</td>
+                <td>1 997 mil</td>
+                <td>2024</td>
+                <td>Bromma</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24523286")'><span class='badge'>-8.7%</span><span class='tooltiptext'>Marknadsvärde: 385 494 kr
+Faktiskt pris: 419 000 kr
+Differens: -33 505 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24523286" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>419 000 kr</td>
+                <td>1 611 mil</td>
+                <td>2025</td>
+                <td>Borås</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24523111")'><span class='badge badge-positive'>+7.4%</span><span class='tooltiptext'>Marknadsvärde: 345 486 kr
+Faktiskt pris: 319 900 kr
+Differens: 25 586 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24523111" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>319 900 kr</td>
+                <td>5 945 mil</td>
+                <td>2023</td>
+                <td>Hisings Backa</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24095102")'><span class='badge'>-14.1%</span><span class='tooltiptext'>Marknadsvärde: 315 438 kr
+Faktiskt pris: 359 900 kr
+Differens: -44 461 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24095102" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>359 900 kr</td>
+                <td>13 281 mil</td>
+                <td>2023</td>
+                <td>Varberg</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><span class='badge'>-</span></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24519548" target="_blank">Toyota Corolla</a></td>
+                <td>Toyota Corolla</td>
+                <td>314 900 kr</td>
+                <td>2 857 mil</td>
+                <td>2025</td>
+                <td>Nacka</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24508759")'><span class='badge'>-1.7%</span><span class='tooltiptext'>Marknadsvärde: 392 416 kr
+Faktiskt pris: 399 000 kr
+Differens: -6 583 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24508759" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>399 000 kr</td>
+                <td>2 638 mil</td>
+                <td>2026</td>
+                <td>Borås</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24505399")'><span class='badge'>-7.5%</span><span class='tooltiptext'>Marknadsvärde: 344 036 kr
+Faktiskt pris: 369 900 kr
+Differens: -25 863 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24505399" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>369 900 kr</td>
+                <td>3 582 mil</td>
+                <td>2022</td>
+                <td>Hässleholm</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24494745")'><span class='badge badge-positive'>+2.0%</span><span class='tooltiptext'>Marknadsvärde: 346 759 kr
+Faktiskt pris: 339 900 kr
+Differens: 6 859 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24494745" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>339 900 kr</td>
+                <td>5 634 mil</td>
+                <td>2023</td>
+                <td>Handen</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("23051858")'><span class='badge badge-positive'>+3.3%</span><span class='tooltiptext'>Marknadsvärde: 382 492 kr
+Faktiskt pris: 369 900 kr
+Differens: 12 592 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/23051858" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>369 900 kr</td>
+                <td>2 344 mil</td>
+                <td>2025</td>
+                <td>Västerås</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("22941291")'><span class='badge badge-positive'>+8.8%</span><span class='tooltiptext'>Marknadsvärde: 371 666 kr
+Faktiskt pris: 339 000 kr
+Differens: 32 666 kr</span></div></td>
+                <td><div class='tooltip clickable-cell' onclick='openModal("22941291")'><span class='badge badge-positive'>C</span><span class='tooltiptext'>🎯 Betyg C: Pris efter utrustningsbehov är genomsnittligt. Saknar dragkrok, motorvärmare och vinterdäck.</span></div></td>
+                <td><a href="https://www.blocket.se/mobility/item/22941291" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>339 000 kr</td>
+                <td>2 270 mil</td>
+                <td>2024</td>
+                <td>Mjölby</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge badge-warning'>⚠️ Saknar drag (-10k)</span><span class='badge badge-warning'>⚠️ Saknar värmare (-8k)</span><span class='badge badge-warning'>⚠️ Saknar vinterdäck (-15k)</span><span class='badge badge-warning' title='Inga kända defekter.'>🔧 Fel: Inga kända defekter.</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24493372")'><span class='badge badge-positive'>+0.5%</span><span class='tooltiptext'>Marknadsvärde: 401 169 kr
+Faktiskt pris: 399 000 kr
+Differens: 2 169 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24493372" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>399 000 kr</td>
+                <td>501 mil</td>
+                <td>2026</td>
+                <td>Borås</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24262822")'><span class='badge badge-positive'>+9.6%</span><span class='tooltiptext'>Marknadsvärde: 353 768 kr
+Faktiskt pris: 319 900 kr
+Differens: 33 868 kr</span></div></td>
+                <td><div class='tooltip clickable-cell' onclick='openModal("24262822")'><span class='badge badge-positive'>B</span><span class='tooltiptext'>🎯 Betyg B: Bra pris efter kostnader, saknar dragkrok, motorvärmare och vinterdäck.</span></div></td>
+                <td><a href="https://www.blocket.se/mobility/item/24262822" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>319 900 kr</td>
+                <td>3 923 mil</td>
+                <td>2023</td>
+                <td>Kungsbacka</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge badge-warning'>⚠️ Saknar drag (-10k)</span><span class='badge badge-warning'>⚠️ Saknar värmare (-8k)</span><span class='badge badge-warning'>⚠️ Saknar vinterdäck (-15k)</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24261945")'><span class='badge badge-positive'>+7.6%</span><span class='tooltiptext'>Marknadsvärde: 351 703 kr
+Faktiskt pris: 324 900 kr
+Differens: 26 803 kr</span></div></td>
+                <td><div class='tooltip clickable-cell' onclick='openModal("24261945")'><span class='badge badge-positive'>A-</span><span class='tooltiptext'>🎯 Betyg A-: Mycket bra pris och utrustning, saknar endast vinterdäck. Servad till 2026.</span></div></td>
+                <td><a href="https://www.blocket.se/mobility/item/24261945" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>324 900 kr</td>
+                <td>4 427 mil</td>
+                <td>2023</td>
+                <td>Kungsbacka</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>✅ Dragkrok</span><span class='badge'>✅ Motorvärmare</span><span class='badge badge-warning'>⚠️ Saknar vinterdäck (-15k)</span><span class='badge'>✅ Nyservad</span><span class='badge badge-warning' title='Saknar vinterdäck.'>🔧 Fel: Saknar vinterdäck.</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24491825")'><span class='badge'>-4.0%</span><span class='tooltiptext'>Marknadsvärde: 389 451 kr
+Faktiskt pris: 404 900 kr
+Differens: -15 448 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24491825" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>404 900 kr</td>
+                <td>645 mil</td>
+                <td>2025</td>
+                <td>Åkersberga</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24489946")'><span class='badge'>-4.6%</span><span class='tooltiptext'>Marknadsvärde: 368 123 kr
+Faktiskt pris: 384 900 kr
+Differens: -16 776 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24489946" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>384 900 kr</td>
+                <td>3 135 mil</td>
+                <td>2024</td>
+                <td>Mölndal</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24485081")'><span class='badge'>-0.4%</span><span class='tooltiptext'>Marknadsvärde: 398 228 kr
+Faktiskt pris: 399 900 kr
+Differens: -1 671 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24485081" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>399 900 kr</td>
+                <td>1 219 mil</td>
+                <td>2026</td>
+                <td>Enköping</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><span class='badge'>-</span></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24321393" target="_blank">Toyota Corolla</a></td>
+                <td>Toyota Corolla</td>
+                <td>314 900 kr</td>
+                <td>2 338 mil</td>
+                <td>2025</td>
+                <td>Nacka</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24482500")'><span class='badge badge-positive'>+6.8%</span><span class='tooltiptext'>Marknadsvärde: 402 270 kr
+Faktiskt pris: 374 900 kr
+Differens: 27 370 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24482500" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>374 900 kr</td>
+                <td>232 mil</td>
+                <td>2026</td>
+                <td>Lund</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("17999170")'><span class='badge'>-1.4%</span><span class='tooltiptext'>Marknadsvärde: 354 608 kr
+Faktiskt pris: 359 700 kr
+Differens: -5 091 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/17999170" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>359 700 kr</td>
+                <td>1 001 mil</td>
+                <td>2022</td>
+                <td>Bromma</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24480580")'><span class='badge badge-positive'>+3.3%</span><span class='tooltiptext'>Marknadsvärde: 351 609 kr
+Faktiskt pris: 339 900 kr
+Differens: 11 709 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24480580" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>339 900 kr</td>
+                <td>4 450 mil</td>
+                <td>2023</td>
+                <td>Malmö</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24475153")'><span class='badge badge-positive'>+9.9%</span><span class='tooltiptext'>Marknadsvärde: 377 146 kr
+Faktiskt pris: 339 900 kr
+Differens: 37 246 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24475153" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>339 900 kr</td>
+                <td>3 649 mil</td>
+                <td>2025</td>
+                <td>Malmö</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><span class='badge'>-</span></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/23773214" target="_blank">Toyota Corolla</a></td>
+                <td>Toyota Corolla</td>
+                <td>319 000 kr</td>
+                <td>3 638 mil</td>
+                <td>2023</td>
+                <td>Falköping</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24464141")'><span class='badge badge-positive'>+6.2%</span><span class='tooltiptext'>Marknadsvärde: 351 814 kr
+Faktiskt pris: 329 900 kr
+Differens: 21 914 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24464141" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>329 900 kr</td>
+                <td>4 400 mil</td>
+                <td>2023</td>
+                <td>Jönköping</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24462139")'><span class='badge'>-8.7%</span><span class='tooltiptext'>Marknadsvärde: 340 345 kr
+Faktiskt pris: 369 900 kr
+Differens: -29 554 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24462139" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>369 900 kr</td>
+                <td>7 200 mil</td>
+                <td>2023</td>
+                <td>Borås</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24461189")'><span class='badge'>-0.7%</span><span class='tooltiptext'>Marknadsvärde: 352 576 kr
+Faktiskt pris: 355 000 kr
+Differens: -2 423 kr</span></div></td>
+                <td><span class='badge'>-</span></td>
+                <td><a href="https://www.blocket.se/mobility/item/24461189" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>355 000 kr</td>
+                <td>4 214 mil</td>
+                <td>2023</td>
+                <td>Norrtälje</td>
+                <td><div class='features-container'><span class='badge badge-warning'>📍 Okänt avstånd</span><span class='badge'>⏳ Väntar på AI-analys</span></div></td>
+            </tr>
+            
+
+            <tr>
+                <td><div class='tooltip tooltip-right clickable-cell' onclick='openModal("24457552")'><span class='badge badge-positive'>+7.9%</span><span class='tooltiptext'>Marknadsvärde: 368 902 kr
+Faktiskt pris: 339 900 kr
+Differens: 29 002 kr</span></div></td>
+                <td><div class='tooltip clickable-cell' onclick='openModal("24457552")'><span class='badge badge-positive'>D</span><span class='tooltiptext'>🎯 Betyg D: Bra pris initialt, men saknar viktig utrustning; blir för dyr.</span></div></td>
+                <td><a href="https://www.blocket.se/mobility/item/24457552" target="_blank">Toyota Corolla Cross</a></td>
+                <td>Toyota Corolla Cross</td>
+                <td>339 900 kr</td>
+                <td>2 945 mil</td>
+                <td>2024</td>
+                <td>Lund</td>
+                <td><div class='features-container'><span class='badge'>📍 138 mil</span><span class='badge badge-warning'>⚠️ Saknar drag (-10k)</span><span class='badge badge-warning'>⚠️ Saknar värmare (-8k)</span><span class='badge badge-warning'>⚠️ Saknar vinterdäck (-15k)</span><span class='badge badge-warning'>⚠️ Defekter</span><span class='badge badge-warning' title='ecall- och appfunktioner kan påverkas av nätavstängning.'>🔧 Fel: ecall- och appfunktioner kan påverkas av nätavstängning.</span></div></td>
+            </tr>
+            
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
     <!-- Details Modal -->
     <div id="details-modal" class="modal">
@@ -706,7 +1498,7 @@ Differens: -8 292 kr</span></div></td>
 
     <script>
         // Data injected from Python
-        const listingsData = {"23617861": {"title": "Volvo V70", "price": "62 000", "mileage": "27 200 mil", "year": 2011, "location": "Norsjö", "math_score": "+9.1%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/23617861", "predicted_price": "68 178"}, "24522568": {"title": "Volkswagen Golf VII", "price": "55 000", "mileage": "29 000 mil", "year": 2017, "location": "Kalix", "math_score": "+23.1%", "ai_grade": "C", "ai_reason": "Prisvärd med utrustning, men extremt högt miltal ökar framtida risker.", "defects": "Inga kända fel", "description": "Besiktad till augusti nästa år, skatten ligger på 492 kronor per år. Fullstämplad servicebok förutom senaste oljeservicen som jag själv gjort för 300 mil sen. Sommar och vinterdäck, dragkrok, ac, adaptiv farthållare osv. Har gått långt men fungerar perfekt.", "url": "https://www.blocket.se/mobility/item/24522568", "predicted_price": "71 503"}, "20965209": {"title": "BMW X3", "price": "65 000", "mileage": "30 000 mil", "year": 2012, "location": "Vindeln", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/20965209", "predicted_price": "0"}, "24635685": {"title": "Volvo V50", "price": "24 000", "mileage": "32 439 mil", "year": 2008, "location": "Sundsvall", "math_score": "-1.9%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24635685", "predicted_price": "23 551"}, "24627617": {"title": "BMW 328i", "price": "98 000", "mileage": "23 437 mil", "year": 2013, "location": "Boden", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24627617", "predicted_price": "0"}, "24625071": {"title": "BMW 525d", "price": "90 000", "mileage": "28 100 mil", "year": 2011, "location": "Luleå", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24625071", "predicted_price": "0"}, "24619881": {"title": "Volvo XC60", "price": "128 000", "mileage": "21 500 mil", "year": 2015, "location": "Umeå", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24619881", "predicted_price": "0"}, "24619133": {"title": "BMW 320d", "price": "79 000", "mileage": "19 900 mil", "year": 2011, "location": "Luleå", "math_score": "+26.7%", "ai_grade": "A", "ai_reason": "Mycket prisvärd, bra utrustning och motor/växellåda går bra trots mindre skavanker.", "defects": "parkeringsskada vänster fram, mindre skavanker, slitna sommardäck, gamla vinterdäck, slitna vinterfälgar", "description": "Hel och fin invändigt.\nGår bra i motor och växellåda\nFå ägare, jag har själv haft den i drygt 4år.\nAvtagbar dragkrok.\nMotor och kupévärmare\nUtvändigt finns en parkeringsskada fram på vänster stötfångare samt några andra mindre skavanker som nog kan anses som normalt slitage.\nSommardäcken är ngt slitna.\nVinterdäcken är gamla men funkar helt OK, däremot är fälgarna slitna.", "url": "https://www.blocket.se/mobility/item/24619133", "predicted_price": "107 719"}, "24616978": {"title": "Volvo V70", "price": "31 000", "mileage": "27 167 mil", "year": 2008, "location": "Njutånger", "math_score": "+13.5%", "ai_grade": "A+", "ai_reason": "Mycket prisvärd, nyservad med nya delar, och i fint skick.", "defects": "Inga kända fel", "description": "Tänkte kolla intresset för våran v70.\nNy servad, ny torkarmotor bak, ny generator, sommar och vinterdäck, dragkrok, motorvärmare, fungerande ac.\nBilen är hel och fin, och allt funkar som det ska!\nRing vid intresse.\n073-8177448", "url": "https://www.blocket.se/mobility/item/24616978", "predicted_price": "35 849"}, "24604956": {"title": "Volkswagen Passat", "price": "42 000", "mileage": "25 030 mil", "year": 2012, "location": "Piteå", "math_score": "+39.4%", "ai_grade": "A", "ai_reason": "Mycket prisvärd trots rost och slitage, nyligen besiktigad utan anmärkning.", "defects": "Slitage i lacken och rost.", "description": "Nu säljer dottern sin Passat då hon inte har behov av så stor bil längre.\nVolkswagen Passat Variant 2.0 TDI Manuell från 2012 med framhjulsdrift och en 140 hk dieselmotor.\nBilen har rullat 25 000 mil och är utrustad med manuell växellåda.\nSenaste besiktning utfördes 2026-05-21 Utan anmärkningar\nInför besiktningen bytt bromsbelägg och bromsskivor bak samt stabilisatorstag h/v fram.\nFina dubbade vinterhjul som rullat en vinter på aluminiumfälg.\nBilen är inte ny, så det finns visst slitage i lacken och rost.\nÄgarbyte sker elektroniskt via app, svenskt körkort krävs och betalning sker via Swish.", "url": "https://www.blocket.se/mobility/item/24604956", "predicted_price": "69 308"}, "24617079": {"title": "Volkswagen Caddy", "price": "25 000", "mileage": "19 200 mil", "year": 2008, "location": "Kalix", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24617079", "predicted_price": "0"}, "24588906": {"title": "Skoda Fabia", "price": "12 000", "mileage": "19 800 mil", "year": 2009, "location": "Kalix", "math_score": "+56.9%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24588906", "predicted_price": "27 846"}, "24429598": {"title": "Volvo V50", "price": "18 900", "mileage": "28 900 mil", "year": 2007, "location": "Skellefteå", "math_score": "+25.6%", "ai_grade": "A+", "ai_reason": "Mycket prisvärd, nyservad och i bra skick trots höga mil. Hög potential.", "defects": "Inga kända fel", "description": "Bilen är i bra skick för sin ålder.\nGår bra i motor, växellåda och drivlinan.\nNy besiktigad till 2027-07-31\nÅrsskatt endast 1.086:- Den är betald.\nNy servad\nKamkedja (Motor)\nNyligen bytt bromsskivor, belägg och bromsok runtom.\nSommar och Vinterhjul Dubbade\nDragkrok\nMotorvärmare med kupeuttag\nEndast 4 brukare sedan ny.\nVälkommen att höra av er vid intresse\nTel: 076 111 18 83", "url": "https://www.blocket.se/mobility/item/24429598", "predicted_price": "25 408"}, "24615405": {"title": "Kia Rio", "price": "45 000", "mileage": "23 190 mil", "year": 2012, "location": "Enånger", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24615405", "predicted_price": "0"}, "24613368": {"title": "Volkswagen Passat Alltrack", "price": "125 000", "mileage": "12 750 mil", "year": 2013, "location": "Sundsvall", "math_score": "-73.7%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24613368", "predicted_price": "71 966"}, "23365129": {"title": "Skoda Superb", "price": "36 000", "mileage": "20 000 mil", "year": 2012, "location": "Örnsköldsvik", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/23365129", "predicted_price": "0"}, "24610075": {"title": "BMW 320i", "price": "28 000", "mileage": "26 150 mil", "year": 2007, "location": "Älvsbyn", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24610075", "predicted_price": "0"}, "23291341": {"title": "Volvo XC60", "price": "63 000", "mileage": "30 012 mil", "year": 2010, "location": "Lycksele", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/23291341", "predicted_price": "0"}, "24423152": {"title": "Volkswagen Passat", "price": "35 500", "mileage": "218 006 mil", "year": 2008, "location": "Älvsbyn", "math_score": "-28.9%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24423152", "predicted_price": "27 540"}, "24609441": {"title": "Volvo V70", "price": "55 000", "mileage": "39 600 mil", "year": 2012, "location": "Kalix", "math_score": "+29.2%", "ai_grade": "B", "ai_reason": "Mycket prisvärd med bra utrustning, men extremt högt miltal.", "defects": "Sämre vinterdäck", "description": "Volvo v70 2012\nD5 automat\nAwd\n396**mil kamrem bytt på 36***mil\nLilla skärmen och bluetooth\nMotorvärmare\nDieselvärmare\nSov hjul, fina sommardäck, sämre vinterdäck\n55.000kr eventuellt byte i billigare bil + pengar, gärna dieselbil. Fel å fix är inget hinder\nTelefonnummer bifogas om ni hellre vill ringa", "url": "https://www.blocket.se/mobility/item/24609441", "predicted_price": "77 703"}, "24599529": {"title": "Volvo V70", "price": "25 000", "mileage": "41 770 mil", "year": 2011, "location": "Luleå", "math_score": "+62.5%", "ai_grade": "A", "ai_reason": "Mycket prisvärd, går bra och har bra utrustning trots kosmetiska skavanker.", "defects": "Yttre skavanker/repor och stenskott finns. Däck bedöms hålla en säsong.", "description": "Senast servad augusti 2025. Servicehistorik finns. Bilen går bra och har inga kända mekaniska fel. 2 nycklar.\nDragkrok, backsensor och farthållare. Bagagerumsgardin och lös kupévärmare medföljer. Sommar- och vinterdäck medföljer också och bedöms hålla en säsong till. Säljes i befintligt skick.\nPraktisk och rymlig bruksbil. Yttre skavanker/repor och stenskott finns, vilket är inräknat i priset och syns på bilderna.", "url": "https://www.blocket.se/mobility/item/24599529", "predicted_price": "66 706"}, "24593375": {"title": "Kia Venga", "price": "97 900", "mileage": "3 319 mil", "year": 2014, "location": "Luleå", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24593375", "predicted_price": "0"}, "24570938": {"title": "Volvo V70", "price": "43 900", "mileage": "29 560 mil", "year": 2008, "location": "Luleå", "math_score": "-23.3%", "ai_grade": "A", "ai_reason": "Mycket prisvärd och välfungerande, utrustad, kräver mindre bakskärmsfix.", "defects": "Fix vänster bakskärm, endast sommardäck", "description": "Nu säljer jag min Volvo V70 som är i fint skick och fungerar precis som den ska. Det här är en bil som är känd för sin höga komfort, säkerhet och tillförlitlighet. Den passar lika bra för familjen som för dig som pendlar eller behöver en rymlig bil med stort bagageutrymme.\nBilen är regelbundet servad och väl omhändertagen. Motor, växellåda och övriga funktioner fungerar utan anmärkning. Den är bekväm att köra, ligger stadigt på vägen och erbjuder en tyst och behaglig körupplevelse. Invändigt är bilen ren och fräsch, och utvändigt är den i gott skick med normalt slitage sett till ålder och miltal, 29900\nMotor och kupévärmare\nEndast sommardäck,\nBehöver ￼ bara fixa vänster bak. Skärmen ￼\nFör information ringa\n0738962809\nSäljas av Prime Cars Luleå ￼", "url": "https://www.blocket.se/mobility/item/24570938", "predicted_price": "35 607"}};
+        const listingsData = {"23617861": {"title": "Volvo V70", "price": "62 000", "mileage": "27 200 mil", "year": 2011, "location": "Norsjö", "math_score": "+9.1%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/23617861", "predicted_price": "68 178"}, "24522568": {"title": "Volkswagen Golf VII", "price": "55 000", "mileage": "29 000 mil", "year": 2017, "location": "Kalix", "math_score": "+23.1%", "ai_grade": "C", "ai_reason": "Prisvärd med utrustning, men extremt högt miltal ökar framtida risker.", "defects": "Inga kända fel", "description": "Besiktad till augusti nästa år, skatten ligger på 492 kronor per år. Fullstämplad servicebok förutom senaste oljeservicen som jag själv gjort för 300 mil sen. Sommar och vinterdäck, dragkrok, ac, adaptiv farthållare osv. Har gått långt men fungerar perfekt.", "url": "https://www.blocket.se/mobility/item/24522568", "predicted_price": "71 503"}, "20965209": {"title": "BMW X3", "price": "65 000", "mileage": "30 000 mil", "year": 2012, "location": "Vindeln", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/20965209", "predicted_price": "0"}, "24635685": {"title": "Volvo V50", "price": "24 000", "mileage": "32 439 mil", "year": 2008, "location": "Sundsvall", "math_score": "-1.9%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24635685", "predicted_price": "23 551"}, "24627617": {"title": "BMW 328i", "price": "98 000", "mileage": "23 437 mil", "year": 2013, "location": "Boden", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24627617", "predicted_price": "0"}, "24625071": {"title": "BMW 525d", "price": "90 000", "mileage": "28 100 mil", "year": 2011, "location": "Luleå", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24625071", "predicted_price": "0"}, "24619881": {"title": "Volvo XC60", "price": "128 000", "mileage": "21 500 mil", "year": 2015, "location": "Umeå", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24619881", "predicted_price": "0"}, "24619133": {"title": "BMW 320d", "price": "79 000", "mileage": "19 900 mil", "year": 2011, "location": "Luleå", "math_score": "+26.7%", "ai_grade": "A", "ai_reason": "Mycket prisvärd, bra utrustning och motor/växellåda går bra trots mindre skavanker.", "defects": "parkeringsskada vänster fram, mindre skavanker, slitna sommardäck, gamla vinterdäck, slitna vinterfälgar", "description": "Hel och fin invändigt.\nGår bra i motor och växellåda\nFå ägare, jag har själv haft den i drygt 4år.\nAvtagbar dragkrok.\nMotor och kupévärmare\nUtvändigt finns en parkeringsskada fram på vänster stötfångare samt några andra mindre skavanker som nog kan anses som normalt slitage.\nSommardäcken är ngt slitna.\nVinterdäcken är gamla men funkar helt OK, däremot är fälgarna slitna.", "url": "https://www.blocket.se/mobility/item/24619133", "predicted_price": "107 719"}, "24616978": {"title": "Volvo V70", "price": "31 000", "mileage": "27 167 mil", "year": 2008, "location": "Njutånger", "math_score": "+13.5%", "ai_grade": "A+", "ai_reason": "Mycket prisvärd, nyservad med nya delar, och i fint skick.", "defects": "Inga kända fel", "description": "Tänkte kolla intresset för våran v70.\nNy servad, ny torkarmotor bak, ny generator, sommar och vinterdäck, dragkrok, motorvärmare, fungerande ac.\nBilen är hel och fin, och allt funkar som det ska!\nRing vid intresse.\n073-8177448", "url": "https://www.blocket.se/mobility/item/24616978", "predicted_price": "35 849"}, "24604956": {"title": "Volkswagen Passat", "price": "42 000", "mileage": "25 030 mil", "year": 2012, "location": "Piteå", "math_score": "+39.4%", "ai_grade": "A", "ai_reason": "Mycket prisvärd trots rost och slitage, nyligen besiktigad utan anmärkning.", "defects": "Slitage i lacken och rost.", "description": "Nu säljer dottern sin Passat då hon inte har behov av så stor bil längre.\nVolkswagen Passat Variant 2.0 TDI Manuell från 2012 med framhjulsdrift och en 140 hk dieselmotor.\nBilen har rullat 25 000 mil och är utrustad med manuell växellåda.\nSenaste besiktning utfördes 2026-05-21 Utan anmärkningar\nInför besiktningen bytt bromsbelägg och bromsskivor bak samt stabilisatorstag h/v fram.\nFina dubbade vinterhjul som rullat en vinter på aluminiumfälg.\nBilen är inte ny, så det finns visst slitage i lacken och rost.\nÄgarbyte sker elektroniskt via app, svenskt körkort krävs och betalning sker via Swish.", "url": "https://www.blocket.se/mobility/item/24604956", "predicted_price": "69 308"}, "24617079": {"title": "Volkswagen Caddy", "price": "25 000", "mileage": "19 200 mil", "year": 2008, "location": "Kalix", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24617079", "predicted_price": "0"}, "24588906": {"title": "Skoda Fabia", "price": "12 000", "mileage": "19 800 mil", "year": 2009, "location": "Kalix", "math_score": "+56.9%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24588906", "predicted_price": "27 846"}, "24429598": {"title": "Volvo V50", "price": "18 900", "mileage": "28 900 mil", "year": 2007, "location": "Skellefteå", "math_score": "+25.6%", "ai_grade": "A+", "ai_reason": "Mycket prisvärd, nyservad och i bra skick trots höga mil. Hög potential.", "defects": "Inga kända fel", "description": "Bilen är i bra skick för sin ålder.\nGår bra i motor, växellåda och drivlinan.\nNy besiktigad till 2027-07-31\nÅrsskatt endast 1.086:- Den är betald.\nNy servad\nKamkedja (Motor)\nNyligen bytt bromsskivor, belägg och bromsok runtom.\nSommar och Vinterhjul Dubbade\nDragkrok\nMotorvärmare med kupeuttag\nEndast 4 brukare sedan ny.\nVälkommen att höra av er vid intresse\nTel: 076 111 18 83", "url": "https://www.blocket.se/mobility/item/24429598", "predicted_price": "25 408"}, "24615405": {"title": "Kia Rio", "price": "45 000", "mileage": "23 190 mil", "year": 2012, "location": "Enånger", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24615405", "predicted_price": "0"}, "24613368": {"title": "Volkswagen Passat Alltrack", "price": "125 000", "mileage": "12 750 mil", "year": 2013, "location": "Sundsvall", "math_score": "-73.7%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24613368", "predicted_price": "71 966"}, "23365129": {"title": "Skoda Superb", "price": "36 000", "mileage": "20 000 mil", "year": 2012, "location": "Örnsköldsvik", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/23365129", "predicted_price": "0"}, "24610075": {"title": "BMW 320i", "price": "28 000", "mileage": "26 150 mil", "year": 2007, "location": "Älvsbyn", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24610075", "predicted_price": "0"}, "23291341": {"title": "Volvo XC60", "price": "63 000", "mileage": "30 012 mil", "year": 2010, "location": "Lycksele", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/23291341", "predicted_price": "0"}, "24423152": {"title": "Volkswagen Passat", "price": "35 500", "mileage": "218 006 mil", "year": 2008, "location": "Älvsbyn", "math_score": "-28.9%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24423152", "predicted_price": "27 540"}, "24609441": {"title": "Volvo V70", "price": "55 000", "mileage": "39 600 mil", "year": 2012, "location": "Kalix", "math_score": "+29.2%", "ai_grade": "B", "ai_reason": "Mycket prisvärd med bra utrustning, men extremt högt miltal.", "defects": "Sämre vinterdäck", "description": "Volvo v70 2012\nD5 automat\nAwd\n396**mil kamrem bytt på 36***mil\nLilla skärmen och bluetooth\nMotorvärmare\nDieselvärmare\nSov hjul, fina sommardäck, sämre vinterdäck\n55.000kr eventuellt byte i billigare bil + pengar, gärna dieselbil. Fel å fix är inget hinder\nTelefonnummer bifogas om ni hellre vill ringa", "url": "https://www.blocket.se/mobility/item/24609441", "predicted_price": "77 703"}, "24599529": {"title": "Volvo V70", "price": "25 000", "mileage": "41 770 mil", "year": 2011, "location": "Luleå", "math_score": "+62.5%", "ai_grade": "A", "ai_reason": "Mycket prisvärd, går bra och har bra utrustning trots kosmetiska skavanker.", "defects": "Yttre skavanker/repor och stenskott finns. Däck bedöms hålla en säsong.", "description": "Senast servad augusti 2025. Servicehistorik finns. Bilen går bra och har inga kända mekaniska fel. 2 nycklar.\nDragkrok, backsensor och farthållare. Bagagerumsgardin och lös kupévärmare medföljer. Sommar- och vinterdäck medföljer också och bedöms hålla en säsong till. Säljes i befintligt skick.\nPraktisk och rymlig bruksbil. Yttre skavanker/repor och stenskott finns, vilket är inräknat i priset och syns på bilderna.", "url": "https://www.blocket.se/mobility/item/24599529", "predicted_price": "66 706"}, "24593375": {"title": "Kia Venga", "price": "97 900", "mileage": "3 319 mil", "year": 2014, "location": "Luleå", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24593375", "predicted_price": "0"}, "24570938": {"title": "Volvo V70", "price": "43 900", "mileage": "29 560 mil", "year": 2008, "location": "Luleå", "math_score": "-23.3%", "ai_grade": "A", "ai_reason": "Mycket prisvärd och välfungerande, utrustad, kräver mindre bakskärmsfix.", "defects": "Fix vänster bakskärm, endast sommardäck", "description": "Nu säljer jag min Volvo V70 som är i fint skick och fungerar precis som den ska. Det här är en bil som är känd för sin höga komfort, säkerhet och tillförlitlighet. Den passar lika bra för familjen som för dig som pendlar eller behöver en rymlig bil med stort bagageutrymme.\nBilen är regelbundet servad och väl omhändertagen. Motor, växellåda och övriga funktioner fungerar utan anmärkning. Den är bekväm att köra, ligger stadigt på vägen och erbjuder en tyst och behaglig körupplevelse. Invändigt är bilen ren och fräsch, och utvändigt är den i gott skick med normalt slitage sett till ålder och miltal, 29900\nMotor och kupévärmare\nEndast sommardäck,\nBehöver ￼ bara fixa vänster bak. Skärmen ￼\nFör information ringa\n0738962809\nSäljas av Prime Cars Luleå ￼", "url": "https://www.blocket.se/mobility/item/24570938", "predicted_price": "35 607"}, "682d3ae9-6fe2-4594-b9dc-49e86fe41c35": {"title": "Toyota RAV4 Laddhybrid", "price": "329 800", "mileage": "13 187 mil", "year": 2021, "location": "Sundsvall", "math_score": "+2.5%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.wayke.se/objekt/682d3ae9-6fe2-4594-b9dc-49e86fe41c35", "predicted_price": "338 296"}, "74c9e613-deb4-4dca-a931-c66bc2b5b5a5": {"title": "Toyota RAV4 Hybrid AWD-i", "price": "349 800", "mileage": "5 681 mil", "year": 2020, "location": "Sundsvall", "math_score": "+0.7%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Vi erbjuder flexibla finansieringslösningar på samtliga bilar med en godkännandegrad på 96% – gå in på riddermarkbil.se eller ring oss för att få se din potentiella månadskostnad.\nRiddermark Bil har Sveriges NÖJDASTE kunder enligt TrustpilotFXN55F Vi tar emot alla inbyten och erbjuder hemleverans i hela Sverige!\nToyota RAV4 Hybrid AWD-i kombinerar modern hybridteknik, fyrhjulsdrift och hög komfort för alla typer av resor.Rymlig SUV med låg förbrukning, smarta säkerhetssystem och driftsäkerhet som uppskattas år efter år.\nOBS: Vänligen ring oss innan ditt besök för att säkerställa att bilen finns i butiken, då den kan vara placerad på en annan anläggning eller reserverad\nUtrustning inkluderar:\nActive\nBackkamera\nDragkrok\nAdaptiv farthållare\nSätesvärme fram\nLane Assist\nÖvrig information om bilen:Årsskatt: Endast 734 krVid blandad körning är förbrukning endast 0.44 l/milBesiktigad till och med 2027-04-30Möjlighet till 12-60 månaders garanti\nServicehistorik:2021-05-19 - 710 mil2023-11-22 - 2797 mil2026-07-03 - 5681 mil\nBesökhttps://www.riddermarkbil.se/kopa-bil/toyota/fxn55f/för att:• Se närbilder och film på bilen• Reservera bilen direkt online• Få mer info om utrustning och tillval\nDärför ska du välja Riddermark Bil Sundsvall:\nStörst i Sverige på begagnade bilar\nErbjuder hemleverans i hela Sverige\n14 dagars helförsäkring via Folksam\nÖver 10 tusen omdömen på Trustpilot\nVåra bilar är testade på över 100 punkter\nKvalitetssäkrade bilar\nVälkommen till Riddermark Bil AB - Sveriges största märkesoberoende bilfirma! Alla våra bilar är leveransklara och vi erbjuder hemleverans i hela Sverige 7 dagar i veckan.\nEftersom vi har väldigt korta lagertider på våra bilar, så rekommenderar vi våra kunder att ringa oss på 010-129 59 68 för att kontrollera att fordonet finns kvar! Vi ordnar en finansiering som passar just dina behov och erbjuder 14 dagar försäkring kostnadsfritt i samarbete med Folksam, vi tar gärna din gamla bil i inbyte. Kontakta anläggningen för mer information.\nTelefontider:Måndag - Söndag 08:00 - 24:00\nBesökstider i butik:Måndag - Fredag 10:00 - 19:00Lördag 10:00 - 18:00Söndag 10:00 - 16:00\nVälkomna!\nUtrustning/Tillbehör:Active,Backkamera,Adaptiv farthållare,Dragkrok,Rattvärme,Sätesvärme fram,Elektrisk bagagelucka,Lane Assist,Farthållare,Bluetooth,AC och klimatanläggning,Multifunktionsratt,AC/Luftkonditionering,Aircondition,Antispinn,AC,A/C,AWD,Fyrhjulsdrift,Svensksåld", "url": "https://www.wayke.se/objekt/74c9e613-deb4-4dca-a931-c66bc2b5b5a5", "predicted_price": "352 388"}, "4f48a276-3eda-4600-8f44-a7bfb914287a": {"title": "Toyota RAV4 Hybrid AWD-i", "price": "389 800", "mileage": "5 599 mil", "year": 2022, "location": "Sundsvall", "math_score": "+2.8%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.wayke.se/objekt/4f48a276-3eda-4600-8f44-a7bfb914287a", "predicted_price": "401 151"}, "22209258": {"title": "Toyota RAV4 Plug-in Hybrid", "price": "449 800", "mileage": "8 993 mil", "year": 2023, "location": "Sundsvall", "math_score": "-10.2%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/22209258", "predicted_price": "408 022"}, "24539700": {"title": "Toyota RAV4 Plug-in Hybrid", "price": "329 800", "mileage": "13 187 mil", "year": 2021, "location": "Sundsvall", "math_score": "+2.5%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24539700", "predicted_price": "338 296"}, "24535791": {"title": "Toyota RAV4", "price": "349 800", "mileage": "5 681 mil", "year": 2020, "location": "Sundsvall", "math_score": "+0.7%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24535791", "predicted_price": "352 388"}, "23600516": {"title": "Toyota RAV4", "price": "474 800", "mileage": "544 mil", "year": 2025, "location": "Sundsvall", "math_score": "+4.9%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/23600516", "predicted_price": "499 440"}, "24523808": {"title": "Toyota RAV4", "price": "389 800", "mileage": "5 599 mil", "year": 2022, "location": "Sundsvall", "math_score": "+2.8%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24523808", "predicted_price": "401 151"}, "24649075": {"title": "Toyota Corolla Cross", "price": "419 900", "mileage": "0 mil", "year": 2025, "location": "Jönköping", "math_score": "-7.1%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24649075", "predicted_price": "392 092"}, "22652864": {"title": "Toyota Corolla Cross", "price": "378 900", "mileage": "3 268 mil", "year": 2022, "location": "Örebro", "math_score": "-9.7%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/22652864", "predicted_price": "345 322"}, "21812938": {"title": "Toyota Corolla Cross", "price": "339 900", "mileage": "6 626 mil", "year": 2023, "location": "Uppsala", "math_score": "+0.8%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/21812938", "predicted_price": "342 696"}, "24629901": {"title": "Toyota Corolla", "price": "379 000", "mileage": "1 625 mil", "year": 2025, "location": "Skövde", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24629901", "predicted_price": "0"}, "24627299": {"title": "Toyota Corolla Cross", "price": "364 800", "mileage": "1 150 mil", "year": 2025, "location": "Kalmar", "math_score": "+5.8%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24627299", "predicted_price": "387 382"}, "23773567": {"title": "Toyota Corolla Cross", "price": "415 000", "mileage": "474 mil", "year": 2025, "location": "Mjölby", "math_score": "-6.4%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/23773567", "predicted_price": "390 151"}, "24605168": {"title": "Toyota Corolla Cross", "price": "329 000", "mileage": "6 212 mil", "year": 2023, "location": "Trollhättan", "math_score": "+4.5%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24605168", "predicted_price": "344 392"}, "24605052": {"title": "Toyota Corolla Cross", "price": "424 900", "mileage": "250 mil", "year": 2025, "location": "Hudiksvall", "math_score": "-8.7%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24605052", "predicted_price": "391 068"}, "24602455": {"title": "Toyota Corolla Cross", "price": "369 000", "mileage": "6 060 mil", "year": 2023, "location": "Norrköping", "math_score": "-7.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24602455", "predicted_price": "345 015"}, "24599848": {"title": "Toyota Corolla Cross", "price": "349 000", "mileage": "4 568 mil", "year": 2024, "location": "Lund", "math_score": "+3.7%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24599848", "predicted_price": "362 254"}, "24596624": {"title": "Toyota Corolla Cross", "price": "349 000", "mileage": "3 785 mil", "year": 2023, "location": "Karlskoga", "math_score": "+1.5%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24596624", "predicted_price": "354 333"}, "21974472": {"title": "Toyota Corolla Cross", "price": "344 800", "mileage": "4 743 mil", "year": 2023, "location": "Bromma", "math_score": "+1.6%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/21974472", "predicted_price": "350 409"}, "24591989": {"title": "Toyota Corolla Cross", "price": "404 900", "mileage": "975 mil", "year": 2025, "location": "Täby", "math_score": "-4.3%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24591989", "predicted_price": "388 099"}, "23808253": {"title": "Toyota Corolla Cross", "price": "344 900", "mileage": "3 891 mil", "year": 2023, "location": "Borås", "math_score": "+2.5%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/23808253", "predicted_price": "353 899"}, "23123510": {"title": "Toyota Corolla Cross", "price": "379 900", "mileage": "1 451 mil", "year": 2024, "location": "Täby", "math_score": "-1.3%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/23123510", "predicted_price": "375 021"}, "21071935": {"title": "Toyota Corolla Cross", "price": "394 800", "mileage": "1 997 mil", "year": 2024, "location": "Bromma", "math_score": "-5.9%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/21071935", "predicted_price": "372 785"}, "24523286": {"title": "Toyota Corolla Cross", "price": "419 000", "mileage": "1 611 mil", "year": 2025, "location": "Borås", "math_score": "-8.7%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24523286", "predicted_price": "385 494"}, "24523111": {"title": "Toyota Corolla Cross", "price": "319 900", "mileage": "5 945 mil", "year": 2023, "location": "Hisings Backa", "math_score": "+7.4%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24523111", "predicted_price": "345 486"}, "24095102": {"title": "Toyota Corolla Cross", "price": "359 900", "mileage": "13 281 mil", "year": 2023, "location": "Varberg", "math_score": "-14.1%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24095102", "predicted_price": "315 438"}, "24519548": {"title": "Toyota Corolla", "price": "314 900", "mileage": "2 857 mil", "year": 2025, "location": "Nacka", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24519548", "predicted_price": "0"}, "24508759": {"title": "Toyota Corolla Cross", "price": "399 000", "mileage": "2 638 mil", "year": 2026, "location": "Borås", "math_score": "-1.7%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24508759", "predicted_price": "392 416"}, "24505399": {"title": "Toyota Corolla Cross", "price": "369 900", "mileage": "3 582 mil", "year": 2022, "location": "Hässleholm", "math_score": "-7.5%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24505399", "predicted_price": "344 036"}, "24494745": {"title": "Toyota Corolla Cross", "price": "339 900", "mileage": "5 634 mil", "year": 2023, "location": "Handen", "math_score": "+2.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24494745", "predicted_price": "346 759"}, "23051858": {"title": "Toyota Corolla Cross", "price": "369 900", "mileage": "2 344 mil", "year": 2025, "location": "Västerås", "math_score": "+3.3%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/23051858", "predicted_price": "382 492"}, "22941291": {"title": "Toyota Corolla Cross", "price": "339 000", "mileage": "2 270 mil", "year": 2024, "location": "Mjölby", "math_score": "+8.8%", "ai_grade": "C", "ai_reason": "Pris efter utrustningsbehov är genomsnittligt. Saknar dragkrok, motorvärmare och vinterdäck.", "defects": "Inga kända defekter.", "description": "-", "url": "https://www.blocket.se/mobility/item/22941291", "predicted_price": "371 666"}, "24493372": {"title": "Toyota Corolla Cross", "price": "399 000", "mileage": "501 mil", "year": 2026, "location": "Borås", "math_score": "+0.5%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24493372", "predicted_price": "401 169"}, "24262822": {"title": "Toyota Corolla Cross", "price": "319 900", "mileage": "3 923 mil", "year": 2023, "location": "Kungsbacka", "math_score": "+9.6%", "ai_grade": "B", "ai_reason": "Bra pris efter kostnader, saknar dragkrok, motorvärmare och vinterdäck.", "defects": "Inga kända fel", "description": "Nu har vi fått in en trevlig Toyota Corolla Cross Hybrid AWD-i e-CVT 197hk 2023, Style - Paket, Går att starta bilen via telefonen som en värmare, Navigator & Apple Carplay finns i bilen, Backkamera, Blandad förbrukning 5.3 - 5.4 l/100km, Årskatt: 580:-/år, Senast Servad: 2026-06-05 hos oss på Toyota Motortrend.\nToyota Corolla Cross AWD - 2023\n-Trygg hybrid med låg förbrukning: Beprövad Toyota?hybrid som ger stark prestanda och riktigt låg ägandekostnad.\n-Fyrhjulsdrift för svensk trygghet: AWD-i ger säkrare grepp på snö, regn och grus – året runt.\n-Smidig SUV med högre insteg: Perfekt storlek: lätt att köra, hög sikt och rymligt inuti.\n-Style?utrustning med allt viktigt: LED?ljus, 18\", smart entry, kamera och moderna skärmar.\n-Marknadsledande Toyota-kvalitet: Låga servicekostnader och maximal driftsäkerhet.\nVälkommen till oss på Motor Trend i Kungsbacka. Vi är ett familjeföretag som startade 1984 i Mariestad och sedan starten auktoriserad återförsäljare för Toyota. Vi hjälper dig med en helhetslösning och ett finansieringsupplägg som är anpassat just för dina behov och vi tar gärna din befintliga bil i inbyte. Alla våra bilar är genomgångna, kontrollerade och varudeklarerade. Kontakta oss på 0300-32 06 00. Adress : Lantmannagatan 2, 434 42 Kungsbacka. Öppettider Försäljning Mån - Fre 09:00 - 18:00 Lördag 10:00 - 14:00 Öppettider Verkstad Mån - Fre 06:45 -17:00.", "url": "https://www.blocket.se/mobility/item/24262822", "predicted_price": "353 768"}, "24261945": {"title": "Toyota Corolla Cross", "price": "324 900", "mileage": "4 427 mil", "year": 2023, "location": "Kungsbacka", "math_score": "+7.6%", "ai_grade": "A-", "ai_reason": "Mycket bra pris och utrustning, saknar endast vinterdäck. Servad till 2026.", "defects": "Saknar vinterdäck.", "description": "Nu har vi fått in en trevlig Toyota Corolla Cross Hybrid AWD-i e-CVT 197hk 2023, Style - Paket, Teknik & Paket, Avtagbar Dragkrok, Går att starta bilen via telefonen som en värmare, Navigator & Apple Carplay finns i bilen, Backkamera med P-Sensorer, Döda vinkel varnare, Blandad förbrukning 5.3 - 5.4 l/100km, Årskatt: 580:-/år (efter juli ), Senast Servad: 2026-06-01 hos oss på Toyota Motortrend.\nToyota Corolla Cross AWD - 2023\n-Trygg hybrid med låg förbrukning: Beprövad Toyota?hybrid som ger stark prestanda och riktigt låg ägandekostnad.\n-Fyrhjulsdrift för svensk trygghet: AWD?i ger säkrare grepp på snö, regn och grus – året runt.\n-Smidig SUV med högre insteg: Perfekt storlek: lätt att köra, hög sikt och rymligt inuti.\n-Style?utrustning med allt viktigt: LED?ljus, 18\", smart entry, kamera och moderna skärmar.\n-Marknadsledande Toyota?kvalitet: Låga servicekostnader och maximal driftsäkerhet.\nVälkommen till oss på Motor Trend i Kungsbacka. Vi är ett familjeföretag som startade 1984 i Mariestad och sedan starten auktoriserad återförsäljare för Toyota. Vi hjälper dig med en helhetslösning och ett finansieringsupplägg som är anpassat just för dina behov och vi tar gärna din befintliga bil i inbyte. Alla våra bilar är genomgångna, kontrollerade och varudeklarerade. Kontakta oss på 0300-32 06 00. Adress : Lantmannagatan 2, 434 42 Kungsbacka. Öppettider Försäljning Mån - Fre 09:00 - 18:00 Lördag 10:00 - 14:00 Öppettider Verkstad Mån - Fre 06:45 -17:00.", "url": "https://www.blocket.se/mobility/item/24261945", "predicted_price": "351 703"}, "24491825": {"title": "Toyota Corolla Cross", "price": "404 900", "mileage": "645 mil", "year": 2025, "location": "Åkersberga", "math_score": "-4.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24491825", "predicted_price": "389 451"}, "24489946": {"title": "Toyota Corolla Cross", "price": "384 900", "mileage": "3 135 mil", "year": 2024, "location": "Mölndal", "math_score": "-4.6%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24489946", "predicted_price": "368 123"}, "24485081": {"title": "Toyota Corolla Cross", "price": "399 900", "mileage": "1 219 mil", "year": 2026, "location": "Enköping", "math_score": "-0.4%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24485081", "predicted_price": "398 228"}, "24321393": {"title": "Toyota Corolla", "price": "314 900", "mileage": "2 338 mil", "year": 2025, "location": "Nacka", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24321393", "predicted_price": "0"}, "24482500": {"title": "Toyota Corolla Cross", "price": "374 900", "mileage": "232 mil", "year": 2026, "location": "Lund", "math_score": "+6.8%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24482500", "predicted_price": "402 270"}, "17999170": {"title": "Toyota Corolla Cross", "price": "359 700", "mileage": "1 001 mil", "year": 2022, "location": "Bromma", "math_score": "-1.4%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/17999170", "predicted_price": "354 608"}, "24480580": {"title": "Toyota Corolla Cross", "price": "339 900", "mileage": "4 450 mil", "year": 2023, "location": "Malmö", "math_score": "+3.3%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24480580", "predicted_price": "351 609"}, "24475153": {"title": "Toyota Corolla Cross", "price": "339 900", "mileage": "3 649 mil", "year": 2025, "location": "Malmö", "math_score": "+9.9%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24475153", "predicted_price": "377 146"}, "23773214": {"title": "Toyota Corolla", "price": "319 000", "mileage": "3 638 mil", "year": 2023, "location": "Falköping", "math_score": "0.0%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/23773214", "predicted_price": "0"}, "24464141": {"title": "Toyota Corolla Cross", "price": "329 900", "mileage": "4 400 mil", "year": 2023, "location": "Jönköping", "math_score": "+6.2%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24464141", "predicted_price": "351 814"}, "24462139": {"title": "Toyota Corolla Cross", "price": "369 900", "mileage": "7 200 mil", "year": 2023, "location": "Borås", "math_score": "-8.7%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24462139", "predicted_price": "340 345"}, "24461189": {"title": "Toyota Corolla Cross", "price": "355 000", "mileage": "4 214 mil", "year": 2023, "location": "Norrtälje", "math_score": "-0.7%", "ai_grade": "-", "ai_reason": "Ej analyserad", "defects": "Inga kända fel", "description": "Beskrivning saknas.", "url": "https://www.blocket.se/mobility/item/24461189", "predicted_price": "352 576"}, "24457552": {"title": "Toyota Corolla Cross", "price": "339 900", "mileage": "2 945 mil", "year": 2024, "location": "Lund", "math_score": "+7.9%", "ai_grade": "D", "ai_reason": "Bra pris initialt, men saknar viktig utrustning; blir för dyr.", "defects": "ecall- och appfunktioner kan påverkas av nätavstängning.", "description": "Bilens ecall -och appfunktioner kan påverkas av nedstängningen av 2G och 3G-näten, vilket för 2G-nätet sker i december 2025 och fram till och med 2027 och stängning av 3G-nätet har påbörjats och stängs successivt.\nPrata med din säljare för ytterligare frågor.", "url": "https://www.blocket.se/mobility/item/24457552", "predicted_price": "368 902"}};
 
         function openModal(id) {
             const data = listingsData[id];
@@ -756,17 +1548,25 @@ Differens: -8 292 kr</span></div></td>
             }
         }
 
+        function switchCampaign(event, campaignId) {
+            document.querySelectorAll('.campaign-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById('campaign-' + campaignId).classList.add('active');
+            
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+
         // Table Sorting Logic
         let sortDirections = {};
-        function sortTable(colIndex, isNumeric = false) {
-            const table = document.querySelector("table");
+        function sortTable(tableId, colIndex, isNumeric = false) {
+            const table = document.getElementById(tableId);
             const tbody = table.querySelector("tbody");
             const rows = Array.from(tbody.querySelectorAll("tr"));
             
-            // Toggle direction
-            const currentDir = sortDirections[colIndex] || 'desc';
+            const sortKey = tableId + '_' + colIndex;
+            const currentDir = sortDirections[sortKey] || 'desc';
             const nextDir = currentDir === 'asc' ? 'desc' : 'asc';
-            sortDirections[colIndex] = nextDir;
+            sortDirections[sortKey] = nextDir;
             
             rows.sort((a, b) => {
                 let cellA = a.cells[colIndex].textContent.trim();
